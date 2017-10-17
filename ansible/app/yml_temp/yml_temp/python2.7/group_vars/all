@@ -1,0 +1,12 @@
+---
+# python 2.7
+python_version: 2.7.9
+python_sha256sum: c8bba33e66ac3201dabdc556f0ea7cfe6ac11946ec32d357c4c6f9b018c12c5b
+
+# setuptools
+setuptools_version: 0.6c11
+setuptools_sha256sum: 630fea9b726320b73ee3ca6ff61732cb32675b0389be658080fe46383b87a1d3
+
+# pip
+pip_version: 1.4.1
+pip_sha256sum: 4e7a06554711a624c35d0c646f63674b7f6bfc7f80221bf1eb1f631bd890d04e

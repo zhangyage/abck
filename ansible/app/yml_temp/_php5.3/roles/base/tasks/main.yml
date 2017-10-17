@@ -1,0 +1,37 @@
+---
+- name: Install base package
+  yum: name={{ item }} state=present
+  with_items:
+    - gcc
+    - gcc-c++
+    - make
+    - cmake
+    - automake
+    - openldap
+    - openldap-devel
+    - freetype
+    - freetype-devel
+    - libpng
+    - libpng-devel
+    - libjpeg
+    - libjpeg-devel
+    - zlib
+    - zlib-devel
+    - libxml2
+    - libxml2-devel
+    - openssl
+    - openssl-devel
+    - gd-devel
+    - openldap 
+    - openldap-devel 
+    - cyrus-sasl-ldap
+    - bzip2
+    - bzip2-devel
+    - curl
+    - curl-devel
+    - libcurl
+    - libcurl-devel
+
+- name: Fixed centos 6 php config error
+  # configure: error: Cannot find ldap libraries in /usr/lib
+  shell: cp -frp /usr/lib64/libldap* /usr/lib/

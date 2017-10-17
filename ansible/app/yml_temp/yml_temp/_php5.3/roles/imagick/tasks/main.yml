@@ -1,0 +1,19 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy imagick package
+  copy: src=imagick-{{ imagick_version }}.tgz dest=/tmp/imagick-{{ imagick_version }}.tgz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf imagick-{{ imagick_version }}.tgz creates=/tmp/imagick-{{ imagick_version }}
+
+- name: Phpize
+  command: chdir=/tmp/imagick-{{ imagick_version }} /usr/local/php/bin/phpize
+
+- name: Config
+  command: chdir=/tmp/imagick-{{ imagick_version }} ./configure --with-php-config=/usr/local/php/bin/php-config
+
+- name: Make
+  command: chdir=/tmp/imagick-{{ imagick_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/imagick-{{ imagick_version }} make install

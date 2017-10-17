@@ -1,0 +1,8 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+
+  roles:
+    - common
+    - base
+    - denyhosts

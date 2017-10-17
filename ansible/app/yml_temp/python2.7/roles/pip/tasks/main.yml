@@ -1,0 +1,12 @@
+---
+#- name: Download pip
+#  get_url: url=https://pypi.python.org/packages/source/p/pip/pip-{{ pip_version }}.tar.gz dest=/tmp/pip-{{ pip_version }}.tar.gz sha256sum={{ pip_sha256sum }}
+- name: Copy pip package
+  copy: src=pip-{{ pip_version }}.tar.gz dest=/tmp/pip-{{ pip_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf /tmp/pip-{{ pip_version }}.tar.gz creates=/tmp/pip-{{ pip_version }}
+
+- name: Install 
+  command: chdir=/tmp/pip-{{ pip_version }} /usr/local/bin/python2.7 setup.py install
+

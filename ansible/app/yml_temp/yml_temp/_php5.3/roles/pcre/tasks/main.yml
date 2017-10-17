@@ -1,0 +1,18 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy pcre package
+  copy: src=pcre-{{ pcre_version }}.tar.gz dest=/tmp/pcre-{{ pcre_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf pcre-{{ pcre_version }}.tar.gz creates=/tmp/pcre-{{ pcre_version }}
+
+- name: Configure
+  command: chdir=/tmp/pcre-{{ pcre_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/pcre-{{ pcre_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/pcre-{{ pcre_version }} make install
+
+

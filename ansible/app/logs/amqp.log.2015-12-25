@@ -1,0 +1,56 @@
+[2015-12-25 11:22:49,035] INFO - started: 1451013769
+[2015-12-25 11:22:49,036] INFO - yml_temp_name: _add_user
+[2015-12-25 11:22:49,036] INFO - args: {'username': u'admin', 'host': u'30-88', 'password': '$6$rounds=656000$NH1n129eDRUkKYKV$76QPzPGeVJuYHTFJFfHkUy8HQNBLlIBFUb.e/HYYUmHOtrZHJ4WKtlfv.Izug9JMcp1LrzT9ytb50A5p72bt30', 'user': u'root'}
+[2015-12-25 11:23:30,950] INFO - status: {'30-88': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2015-12-25 11:23:59,777] INFO - started: 1451013839
+[2015-12-25 11:23:59,777] INFO - yml_temp_name: _add_user
+[2015-12-25 11:23:59,778] INFO - args: {'username': u'zhangkun', 'host': u'30-88', 'password': '$6$rounds=656000$ErztWmlJNQ06nGCt$08AEopHi8WN1nsZ3qegCX6iahIR6JWbEahKn2B5HVotNEhw1o8xvIxiYq45oZzedFBteQi6CrSWkeExnje8J61', 'user': u'root'}
+[2015-12-25 11:24:01,912] INFO - status: {'30-88': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2015-12-25 14:23:08,318] INFO - started: 1451024588
+[2015-12-25 14:23:08,318] INFO - yml_temp_name: _add_user
+[2015-12-25 14:23:08,318] INFO - args: {'username': u'songkun', 'host': u'77-42:77-43', 'password': '$6$rounds=656000$jury69T/aACKbypX$2.Zo61NaphnuAsvcT2Te5tSXRClR8dpPIj6DsmC9mtat0X7mQpI7yTJY5fU43T09KYXUu5io5gHin1VtLUV0d1', 'user': u'root'}
+[2015-12-25 14:23:12,606] INFO - status: {'77-42': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}, '77-43': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2015-12-25 14:23:24,601] INFO - started: 1451024604
+[2015-12-25 14:23:24,601] INFO - yml_temp_name: _add_user
+[2015-12-25 14:23:24,602] INFO - args: {'username': u'songkun', 'host': u'77-42:77-43', 'password': '$6$rounds=656000$jury69T/aACKbypX$2.Zo61NaphnuAsvcT2Te5tSXRClR8dpPIj6DsmC9mtat0X7mQpI7yTJY5fU43T09KYXUu5io5gHin1VtLUV0d1', 'user': u'root'}
+[2015-12-25 14:23:26,185] INFO - status: {'77-42': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 0, 'failures': 0}, '77-43': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 0, 'failures': 0}}
+[2015-12-25 16:05:07,972] INFO - started: 1451030707
+[2015-12-25 16:05:07,973] INFO - yml_temp_name: _add_user_by_pubkey
+[2015-12-25 16:05:07,973] INFO - args: {'username': u'root', 'host': u'20-109:20-98-11016:20-98-10916', 'user': u'liumingfei', 'key': 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuPP7sf5eZY5ft6xcjRFcFQ3iuJTQwX4kWAuccDxzyGwi0/2UEw2dY35BylbFJs3T5mpoBdTswFSJ+RIdxw0oaoN+I/EKbqA3TFjKHyzLE6OLr/fe1Ml/ZL+tM/QjyYIdwLlXt3wgHVswpAznpU2d6UGKnnY4LzmfGVXSUA2jTEh9Mzetec7V5ShYAbGXt8VCOhuhN/BzXhMW/8/PLpAqumvQxujFVlIPDs3Cpj28y0AYmShKKewepI+Kq/uDR9wXWts9I65PEX+VQ29UanTqWjoaVtTbvcCu1K5V4c9WlDFNSQ7stE/aiud106o+sFGr/MNFgtIcOw1OHH/emwr+aw== root@localhost.localdomain\n'}
+[2015-12-25 16:05:11,962] INFO - status: {'20-109': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-10916': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-11016': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}}
+[2015-12-25 16:06:42,612] INFO - started: 1451030802
+[2015-12-25 16:06:42,612] INFO - yml_temp_name: _add_user
+[2015-12-25 16:06:42,613] INFO - args: {'username': u'root', 'host': u'30-99:30-100', 'password': '$6$rounds=656000$GIhVyCp7RKg94Xa4$/r/ax/KmbtvzToSGa./j6ZMugk1lGGZBzVezEt1p7ECsefG/mLHehZsWRS1UlEdCIEgw0kEtZG1tx8qo6akP.0', 'user': u'liumingfei'}
+[2015-12-25 16:07:31,462] INFO - status: {'30-99': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '30-100': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}}
+[2015-12-25 18:10:19,750] INFO - started: 1451038219
+[2015-12-25 18:10:19,751] INFO - yml_temp_name: _add_user
+[2015-12-25 18:10:19,751] INFO - args: {'username': u'liumingfei', 'host': u'30-99:30-100', 'password': '$6$rounds=656000$6qpdRnYh89P7nPlU$.5K.RdO9hE2i0NKc6g398.bhHvcLr7Ayw2nwfjzMf.pZt6PC7943deyEvRwx3wl1zub8VBcrdTq9ID/.AU1dL0', 'user': u'root'}
+[2015-12-25 18:11:21,275] INFO - status: {'30-100': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}, '30-99': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2015-12-25 18:11:21,279] INFO - started: 1451038235
+[2015-12-25 18:11:21,279] INFO - yml_temp_name: _add_user
+[2015-12-25 18:11:21,279] INFO - args: {'username': u'liumingfei', 'host': u'30-99:30-100', 'password': '$6$rounds=656000$6qpdRnYh89P7nPlU$.5K.RdO9hE2i0NKc6g398.bhHvcLr7Ayw2nwfjzMf.pZt6PC7943deyEvRwx3wl1zub8VBcrdTq9ID/.AU1dL0', 'user': u'root'}
+[2015-12-25 18:11:26,911] INFO - status: {'30-100': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 0, 'failures': 0}, '30-99': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 0, 'failures': 0}}
+[2015-12-25 18:11:36,250] INFO - started: 1451038296
+[2015-12-25 18:11:36,250] INFO - yml_temp_name: _del_user
+[2015-12-25 18:11:36,250] INFO - args: {'username': u'liumingfei', 'host': u'30-99:30-100', 'user': u'root'}
+[2015-12-25 18:11:40,048] INFO - status: {'30-99': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 1, 'failures': 0}, '30-100': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 1, 'failures': 0}}
+[2015-12-25 18:12:26,538] INFO - started: 1451038346
+[2015-12-25 18:12:26,538] INFO - yml_temp_name: _add_user
+[2015-12-25 18:12:26,538] INFO - args: {'username': u'liumingfei', 'host': u'30-99:30-100', 'password': '$6$rounds=656000$6E2haeb7r1Oqrkkw$Q3py.gTOC4AqUwrWPLHekZNfyawKUBfrJM5z72xQn6VRysK3EaFACDj1CLzN0oP.MoenWcgpcKTjVkUj1iRgC/', 'user': u'root'}
+[2015-12-25 18:12:33,460] INFO - status: {'30-99': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 1, 'failures': 0}, '30-100': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 1, 'failures': 0}}
+[2015-12-25 18:14:03,778] INFO - started: 1451038443
+[2015-12-25 18:14:03,778] INFO - yml_temp_name: _del_user
+[2015-12-25 18:14:03,778] INFO - args: {'username': u'liumingfei', 'host': u'20-98:20-98-11016:20-98-10916', 'user': u'root'}
+[2015-12-25 18:14:09,207] INFO - status: {'20-98': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-10916': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 0}, '20-98-11016': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 0}}
+[2015-12-25 18:14:31,691] INFO - started: 1451038471
+[2015-12-25 18:14:31,692] INFO - yml_temp_name: _del_user
+[2015-12-25 18:14:31,692] INFO - args: {'username': u'liumingfei', 'host': u'20-98:20-98-11016:20-98-10916', 'user': u'root'}
+[2015-12-25 18:14:35,642] INFO - status: {'20-98': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-10916': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 0}, '20-98-11016': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 0}}
+[2015-12-25 18:21:12,880] INFO - started: 1451038872
+[2015-12-25 18:21:12,881] INFO - yml_temp_name: _add_user_by_pubkey
+[2015-12-25 18:21:12,881] INFO - args: {'username': u'liumingfei', 'host': u'20-98:20-98-11016:20-98-10916', 'user': u'root', 'key': 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA49BBOXyw/QQqkCuZXMi5M821C4y48KNFE2F332yOzhGwPtkbOrimaa/qLn/U2yf07KiART6fAjqHz5ckIwo6f9sLskuCgKaWp3zoMIGMzdxExgeOuDYyiBWsS/8UQmquBpdM68WirEGAFWmRkeOfnTl/gPbAl1RGh+ezE7hYdScUliaCBTeO+CFyLtx2MCFDhBjIOHE6cT75+6E8+XDEb8g8Je1W5lfkNJ9S7XBJ8/X7ZcUURgTdNWsLc0aDUeE/S+t0/Zpw5FtQzZzxUgusg+MIU15Jx2Kq1c9GERHj7N8CrlIdlKrKb0Wo37vI2HT7ohTMdc9h0FFMX1D/ZWLdJQ== liumingfei@feiliu.com\n'}
+[2015-12-25 18:21:25,986] INFO - status: {'20-98': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-10916': {'unreachable': 0, 'skipped': 1, 'ok': 5, 'changed': 4, 'failures': 0}, '20-98-11016': {'unreachable': 0, 'skipped': 1, 'ok': 5, 'changed': 4, 'failures': 0}}
+[2015-12-25 18:21:54,202] INFO - started: 1451038914
+[2015-12-25 18:21:54,202] INFO - yml_temp_name: _add_user_by_pubkey
+[2015-12-25 18:21:54,203] INFO - args: {'username': u'liumingfei', 'host': u'20-98:20-98-11016:20-98-10916', 'user': u'root', 'key': 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA49BBOXyw/QQqkCuZXMi5M821C4y48KNFE2F332yOzhGwPtkbOrimaa/qLn/U2yf07KiART6fAjqHz5ckIwo6f9sLskuCgKaWp3zoMIGMzdxExgeOuDYyiBWsS/8UQmquBpdM68WirEGAFWmRkeOfnTl/gPbAl1RGh+ezE7hYdScUliaCBTeO+CFyLtx2MCFDhBjIOHE6cT75+6E8+XDEb8g8Je1W5lfkNJ9S7XBJ8/X7ZcUURgTdNWsLc0aDUeE/S+t0/Zpw5FtQzZzxUgusg+MIU15Jx2Kq1c9GERHj7N8CrlIdlKrKb0Wo37vI2HT7ohTMdc9h0FFMX1D/ZWLdJQ== liumingfei@feiliu.com\n'}
+[2015-12-25 18:22:02,837] INFO - status: {'20-98': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '20-98-10916': {'unreachable': 0, 'skipped': 1, 'ok': 5, 'changed': 1, 'failures': 0}, '20-98-11016': {'unreachable': 0, 'skipped': 1, 'ok': 5, 'changed': 1, 'failures': 0}}

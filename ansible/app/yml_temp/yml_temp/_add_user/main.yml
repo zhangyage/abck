@@ -1,0 +1,15 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+  tasks:
+
+    - name: add user
+      # Linux passwd use SHA512
+      # from passlib.hash import sha512_crypt
+      # sha512_crypt.encrypt('passwdstr')
+      # Options: name password uid group shell generate_ssh_key ssh_key_type ssh_key_comment state remove
+      user: name={{ username }} password={{ password }}
+
+    - name: add user to /etc/sudoers
+      # Options: dest line regexp owner group mode backup
+      lineinfile: dest=/etc/sudoers line="{{ username }} ALL=(ALL) ALL"

@@ -1,0 +1,17 @@
+---
+#- name: Download python package
+#  get_url: url=https://www.python.org/ftp/python/{{ python_version }}/Python-{{ python_version }}.tgz dest=/tmp/Python-{{ python_version }}.tgz sha256sum={{ python_sha256sum }}
+- name: Copy python package
+  copy: src=Python-{{ python_version }}.tgz dest=/tmp/Python-{{ python_version }}.tgz
+
+- name: Extract archive
+  command: chdir=/tmp/ /bin/tar xvf Python-{{ python_version }}.tgz creates=/tmp/Python-{{ python_version }}
+
+- name: Configure
+  command: chdir=/tmp/Python-{{ python_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/Python-{{ python_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/Python-{{ python_version }} make install

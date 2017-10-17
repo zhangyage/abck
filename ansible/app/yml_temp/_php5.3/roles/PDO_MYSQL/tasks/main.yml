@@ -1,0 +1,19 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy PDO_MYSQL package
+  copy: src=PDO_MYSQL-{{ PDO_MYSQL_version }}.tgz dest=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }}.tgz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf PDO_MYSQL-{{ PDO_MYSQL_version }}.tgz creates=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }}
+
+- name: Phpize
+  command: chdir=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }} /usr/local/php/bin/phpize
+
+- name: Config
+  command: chdir=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }} ./configure --with-php-config=/usr/local/php/bin/php-config --with-pdo-mysql=/usr/local/mysql
+
+- name: Make
+  command: chdir=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/PDO_MYSQL-{{ PDO_MYSQL_version }} make install

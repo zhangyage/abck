@@ -1,0 +1,19 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy memcache package
+  copy: src=memcache-{{ memcache_version }}.tgz dest=/tmp/memcache-{{ memcache_version }}.tgz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf memcache-{{ memcache_version }}.tgz creates=/tmp/memcache-{{ memcache_version }}
+
+- name: Phpize
+  command: chdir=/tmp/memcache-{{ memcache_version }} /usr/local/php/bin/phpize
+
+- name: Config
+  command: chdir=/tmp/memcache-{{ memcache_version }} ./configure --with-php-config=/usr/local/php/bin/php-config
+
+- name: Make
+  command: chdir=/tmp/memcache-{{ memcache_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/memcache-{{ memcache_version }} make install

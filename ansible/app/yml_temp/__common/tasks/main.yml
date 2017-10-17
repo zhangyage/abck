@@ -1,0 +1,9 @@
+---
+  - name: return failed if libselinux-python is not exists
+    shell: rpm -qa|grep libselinux-python
+    register: result
+    ignore_errors: true
+
+  - name: install libselinux-python when result is failed
+    raw: yum -y install libselinux-python
+    when: result|failed

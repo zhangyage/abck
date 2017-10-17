@@ -1,0 +1,6 @@
+Flask==0.10.1
+PyMySQL==0.6.2
+amqplib==1.0.2
+ansible==1.8
+passlib==1.6.2
+torndb==0.3

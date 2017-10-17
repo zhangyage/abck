@@ -1,0 +1,5 @@
+---
+- name: Install dependencies for nginx
+  yum: name=denyhosts state=present
+
+

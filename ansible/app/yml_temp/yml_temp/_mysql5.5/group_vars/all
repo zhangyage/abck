@@ -1,0 +1,5 @@
+---
+# MySQL
+mysql_version: 5.5.42
+mysql_sha256sum: 887b12676be4893fa833e4a585c6c8b0c0f18dee30ba7d22cfe860cd85bfc74a
+mysql_data_dir: /data

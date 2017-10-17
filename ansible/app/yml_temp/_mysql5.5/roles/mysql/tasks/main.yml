@@ -1,0 +1,79 @@
+---
+- name: Add mysql user
+  user: name=mysql
+
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy mysql package
+  copy: src=mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf mysql-{{ mysql_version }}.tar.gz creates=/tmp/mysql-{{ mysql_version }}
+
+- name: Cmake mysql
+  command: chdir=/tmp/mysql-{{ mysql_version }} cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+    -DMYSQL_UNIX_ADDR={{ mysql_data_dir }}/mysql/mysql.sock \
+    -DDEFAULT_CHARSET=utf8 \
+    -DDEFAULT_COLLATION=utf8_general_ci \
+    -DEXTRA_CHARSETS=all \
+    -DWITH_MYISAM_STORAGE_ENGINE=1 \
+    -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+    -DWITH_READLINE=1 \
+    -DENABLED_LOCAL_INFILE=1 \
+    -DWITH_EMBEDDED_SERVER=1 \
+    -DENABLED_ASSEMBLER=1 \
+    -DWITH_SSL=yes \
+    -DWITH_BIG_TABLES=1 \
+    -DMYSQL_DATADIR=$data_dir/mysql \
+    -DMYSQL_USER=mysql \
+    -DMYSQL_TCP_PORT=3306
+
+- name: Make
+  command: chdir=/tmp/mysql-{{ mysql_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/mysql-{{ mysql_version }} make install
+
+- name: Add lib to ld.so.conf
+  lineinfile: dest=/etc/ld.so.conf line="/usr/local/mysql/lib/"
+
+- name: Ldconfig
+  command: /sbin/ldconfig
+
+- name: Mkdir mysql_data_dir
+  file: path={{ mysql_data_dir }}/mysql/3306/{{ item }} state=directory owner=mysql group=mysql
+  with_items:
+    - data
+    - binlog
+    - relaylog
+
+- name: Copy my.conf
+  template: src=my.cnf.j2 dest={{ item }}
+  with_items:
+    - /etc/my.cnf
+    - /usr/local/mysql/my.cnf
+
+- name: Init mysql db
+  command: /usr/local/mysql/scripts/mysql_install_db  \
+    --user=mysql  \
+    --basedir=/usr/local/mysql \
+    --datadir={{ mysql_data_dir }}/mysql/3306/data
+
+- name: Add mysql bin to profile
+  lineinfile: dest=/etc/profile line="export PATH=$PATH:/usr/local/mysql/bin/"
+
+- name: Source profile
+  shell: executable=/bin/bash source /etc/profile
+
+- name: Copy mysqld to init when system start
+  command: cp -f /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+
+- name: Add mysqld to system start
+  command: /sbin/chkconfig --add mysqld
+
+- name: Add mysql to system start when init 345
+  command: /sbin/chkconfig --level 345 mysqld on
+
+- name: Retart mysql
+  service: name=mysqld state=restarted
+

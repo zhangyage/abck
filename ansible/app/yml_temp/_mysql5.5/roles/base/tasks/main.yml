@@ -1,0 +1,9 @@
+---
+- name: Install dependencies for nginx
+  yum: name={{ item }} state=present
+  with_items:
+    - gcc-c++
+    - cmake
+    - bison
+    - bzr
+    - ncurses-devel

@@ -1,0 +1,19 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+  tasks:
+    - name: return failed if libselinux-python is not exists
+      shell: rpm -qa|grep libselinux-python
+      register: result
+      ignore_errors: true
+
+    - name: install libselinux-python when result is failed
+      raw: yum -y install libselinux-python
+      when: result|failed
+    
+    # Options: dest line regexp state backup
+    # 程序同时打开文件的个数
+    - lineinfile: dest=/etc/security/limits.conf line="*  soft  nproc  65535"
+    - lineinfile: dest=/etc/security/limits.conf line="*  hard  nproc  65535"
+    - lineinfile: dest=/etc/security/limits.conf line="*  soft  nofile  65535"
+    - lineinfile: dest=/etc/security/limits.conf line="*  hard  nofile  65535"

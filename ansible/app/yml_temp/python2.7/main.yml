@@ -1,0 +1,11 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+  tasks:
+
+  roles:
+    - common
+    - base
+    - python
+    - setuptools
+    - pip

@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+
+import pymysql
+
+
+conn = None
+
+def init_connection():
+    global conn
+    if conn == None:
+        conn = pymysql.connect(host="localhost",
+                               port=3306,
+                               user="root",
+                               passwd="",
+                               db="ansible",
+                               charset="utf8")
+
+
+def close_connection():
+    global conn
+    conn.close()
+
+
+sel_hosts_sql = "SELECT * FROM hosts"
+sel_groups_sql = "SELECT * FROM groups"
+upd_jobs_sql = 'UPDATE jobs SET status="%s", finished=%s where started=%s'
+sel_inv_sql = 'select A.id,alias,ip,port,remote_user,name as group_name from \
+        (select hosts.id,alias,ip,port,remote_user,group_id from hosts \
+        left join host_group on hosts.id=host_group.host_id) A \
+        left join groups on A.group_id=groups.id'
+
+
+def select_hosts():
+    global conn
+    if conn == None:
+        init_connection()
+    cur = conn.cursor(pymysql.cursors.DictCursor)
+    cur.execute(sel_hosts_sql)
+    cur.connection.commit()
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+
+def select_groups():
+    global conn
+    if conn == None:
+        init_connection()
+    cur = conn.cursor(pymysql.cursors.DictCursor)
+    cur.execute(sel_groups_sql)
+    cur.connection.commit()
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+
+def select_inventory():
+    global conn
+    print "*" * 80
+    print conn
+    print "*" * 80
+    if conn == None:
+        init_connection()
+    cur = conn.cursor(pymysql.cursors.DictCursor)
+    cur.execute(sel_inv_sql)
+    cur.connection.commit()
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+
+def update_jobs(params):
+    global conn
+    if conn == None:
+        init_connection()
+    cur = conn.cursor()
+    cur.execute(upd_jobs_sql % params)
+    cur.connection.commit()
+    cur.close()

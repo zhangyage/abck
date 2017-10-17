@@ -1,0 +1,22 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy eaccelerator package
+  copy: src=eaccelerator-{{ eaccelerator_version }}.tar.bz2 dest=/tmp/eaccelerator-{{ eaccelerator_version }}.tar.bz2
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf eaccelerator-{{ eaccelerator_version }}.tar.bz2 creates=/tmp/eaccelerator-{{ eaccelerator_version }}
+
+- name: Phpize
+  command: chdir=/tmp/eaccelerator-{{ eaccelerator_version }} /usr/local/php/bin/phpize
+
+- name: Config
+  command: chdir=/tmp/eaccelerator-{{ eaccelerator_version }} ./configure --enable-eaccelerator=shared --with-php-config=/usr/local/php/bin/php-config
+
+- name: Make
+  command: chdir=/tmp/eaccelerator-{{ eaccelerator_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/eaccelerator-{{ eaccelerator_version }} make install
+
+- name: Make eaccelerator dir
+  file: dest={{ mysql_data_dir }}/mysql/3306/eaccelerator_cache state=directory

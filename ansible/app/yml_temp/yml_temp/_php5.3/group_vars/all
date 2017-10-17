@@ -1,0 +1,48 @@
+---
+# mysql data dir
+mysql_data_dir: /data
+
+# libiconv
+libiconv_version: 1.14
+libiconv_sha256sum: 72b24ded17d687193c3366d0ebe7cde1e6b18f0df8c55438ac95be39e8a30613
+
+# libmcrypt
+libmcrypt_version: 2.5.8
+libmcrypt_sha256sum: e4eb6c074bbab168ac47b947c195ff8cef9d51a211cdd18ca9c9ef34d27a373e
+
+# mhash
+mhash_version: 0.9.9.9
+mhash_sha256sum: 3dcad09a63b6f1f634e64168dd398e9feb9925560f9b671ce52283a79604d13e
+
+# mcrypt
+mcrypt_version: 2.6.8
+mcrypt_sha256sum: 5145aa844e54cca89ddab6fb7dd9e5952811d8d787c4f4bf27eb261e6c182098
+
+# pcre
+pcre_version: 8.36
+pcre_sha256sum: c1113fd7db934e97ad8b3917d432e5b642e9eb9afd127eb797804937c965f4ac
+
+# ImageMagick
+ImageMagick_version: 6.7.5-10
+ImageMagick_sha256sum: 613146aefeeec31a8663b006664af9f9622d901c9698d9c0a49c6036467a0905
+
+# php
+php_version: 5.3.29 
+php_sha256sum: 57cf097de3d6c3152dda342f62b1b2e9c988f4cfe300ccfe3c11f3c207a0e317
+
+# php module
+# memcache
+memcache_version: 3.0.6
+memcache_sha256sum: 
+
+# eaccelerator
+eaccelerator_version: 0.9.6.1
+eaccelerator_sha256sum:
+
+# PDO_MYSQL
+PDO_MYSQL_version: 1.0.2
+PDO_MYSQL_sha256sum:
+
+# imagick
+imagick_version: 2.3.0
+imagick_sha256sum: 

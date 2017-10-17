@@ -1,0 +1,4 @@
+[2015-12-29 13:14:44,264] INFO - started: 1451366084
+[2015-12-29 13:14:44,273] INFO - yml_temp_name: _add_user
+[2015-12-29 13:14:44,273] INFO - args: {'username': u'songkun', 'host': u'30-101:30-102', 'password': '$6$rounds=656000$WZ6Cyq4k/MfqMQzh$U1Xg27OTt.oUkJ.cQTqShy0Obh369IgL3eGBhFgKtPr1omyttYYZ.yDqna3YtJ3qbsJ.Vj.QcGnM2dt6riVtO1', 'user': u'root'}
+[2015-12-29 13:15:54,156] INFO - status: {'30-101': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}, '30-102': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}

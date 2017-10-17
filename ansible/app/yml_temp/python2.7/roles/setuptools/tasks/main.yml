@@ -1,0 +1,11 @@
+---
+#- name: Download setuptools
+#  get_url: url=https://pypi.python.org/packages/source/s/setuptools/setuptools-{{ setuptools_version }}.tar.gz dest=/tmp/setuptools-{{ setuptools_version }}.tar.gz sha256sum={{ setuptools_sha256sum }}
+- name: Copy setuptools package
+  copy: src=setuptools-{{ setuptools_version }}.tar.gz dest=/tmp/setuptools-{{ setuptools_version }}.tar.gz
+
+- name: Extract archive
+  command: chdir=/tmp/ /bin/tar xvf setuptools-{{ setuptools_version }}.tar.gz creates=/tmp/setuptools-{{ setuptools_version }}
+
+- name: Install
+  command: chdir=/tmp/setuptools-{{ setuptools_version }} /usr/local/bin/python2.7 setup.py install

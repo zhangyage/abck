@@ -1,0 +1,24 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy mhash package
+  copy: src=mhash-{{ mhash_version }}.tar.gz dest=/tmp/mhash-{{ mhash_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf mhash-{{ mhash_version }}.tar.gz creates=/tmp/mhash-{{ mhash_version }}
+
+- name: Configure
+  command: chdir=/tmp/mhash-{{ mhash_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/mhash-{{ mhash_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/mhash-{{ mhash_version }} make install
+
+#- name: Add lib to /usr/lib
+#  shell: ln -s /usr/local/lib/libmhash* /usr/lib/
+- name: Add lib to /usr/lib
+  lineinfile: dest=/etc/ld.so.conf line="/usr/local/lib"
+
+- name: Ldconfig
+  command: /sbin/ldconfig

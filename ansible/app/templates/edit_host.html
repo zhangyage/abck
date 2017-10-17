@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Forms</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Form Elements</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+				<form role="form" method="post" action={{ url_for('hosts.edit_host', alias=host.alias) }}>
+					{{ form.hidden_tag() if form.hidden_tag }}
+						<!--alias-->
+						<div class="input-group col-md-4">
+							{{ form.alias.label(class_="control-label") }}
+							{{ form.alias(class_="form-control", value=host.alias, readonly="true") }}
+						</div>
+						<!--ip-->
+						{% if form.ip.errors %}
+						<div class="input-group has-error col-md-4">
+							{{ form.ip.label(class_="control-label", for="inputError1") }}
+							{{ form.ip(class_="form-control", id="inputError1", value=host.ip) }}
+							{% if form.ip.errors %}
+								{% for e in form.ip.errors %}
+									<div class="alert alert-danger">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>Oh snap!</strong> {{ e }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+						{% else %}
+						<div class="input-group col-md-4">
+							{{ form.ip.label(class_="control-label") }}
+							{{ form.ip(class_="form-control", value=host.ip) }}
+						</div>
+						{% endif %}
+						<!--ip2-->
+						{% if form.ip2.errors %}
+						<div class="input-group has-error col-md-4">
+							{{ form.ip2.label(class_="control-label", for="inputError1") }}
+							{{ form.ip2(class_="form-control", id="inputError1", value=host.ip2) }}
+							{% if form.ip2.errors %}
+								{% for e in form.ip2.errors %}
+									<div class="alert alert-danger">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>Oh snap!</strong> {{ e }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+						{% else %}
+						<div class="input-group col-md-4">
+							{{ form.ip2.label(class_="control-label") }}
+							{{ form.ip2(class_="form-control", value=host.ip2) }}
+						</div>
+						{% endif %}
+						<!--port-->
+						{% if form.port.errors %}
+						<div class="input-group has-error col-md-4">
+							{{ form.port.label(class_="control-label", for="inputError1") }}
+							{{ form.port(class_="form-control", id="inputError1", value=host.port) }}
+							{% if form.port.errors %}
+								{% for e in form.port.errors %}
+									<div class="alert alert-danger">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>Oh snap!</strong> {{ e }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+						{% else %}
+						<div class="input-group col-md-4">
+							{{ form.port.label(class_="control-label") }}
+							{{ form.port(class_="form-control", value=host.port) }}
+						</div>
+						{% endif %}
+						<!--remote_user-->
+						{% if form.remote_user.errors %}
+						<div class="input-group has-error col-md-4">
+							{{ form.remote_user.label(class_="control-label", for="inputError1") }}
+							{{ form.remote_user(class_="form-control", id="inputError1", value=host.remote_user) }}
+							{% if form.remote_user.errors %}
+								{% for e in form.remote_user.errors %}
+									<div class="alert alert-danger">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>Oh snap!</strong> {{ e }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+						{% else %}
+						<div class="input-group col-md-4">
+							{{ form.remote_user.label(class_="control-label") }}
+							{{ form.remote_user(class_="form-control", value=host.remote_user) }}
+						</div>
+						{% endif %}
+					</br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+
+{% endblock %}

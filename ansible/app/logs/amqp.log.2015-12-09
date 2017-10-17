@@ -1,0 +1,12 @@
+[2015-12-09 16:25:32,263] INFO - started: 1449649532
+[2015-12-09 16:25:32,264] INFO - yml_temp_name: _add_user
+[2015-12-09 16:25:32,264] INFO - args: {'username': u'zhangkun', 'host': u'174-185:174-186:191-246', 'password': '$6$rounds=656000$npPxqYEcO.5HG7TV$bFPE0gt9R6yn5ZxSXX90OVv0MVcRup.MyuKvA5h/KSXdT6RgOLyE3pKg2Ou4uRA8WMDYZ6qJpRZ.4Pxq2Meaq1', 'user': u'root'}
+[2015-12-09 16:25:37,025] INFO - status: {'191-246': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}, '174-185': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}, '174-186': {'unreachable': 1, 'skipped': 0, 'ok': 0, 'changed': 0, 'failures': 0}}
+[2015-12-09 16:34:36,152] INFO - started: 1449650076
+[2015-12-09 16:34:36,152] INFO - yml_temp_name: _add_user
+[2015-12-09 16:34:36,152] INFO - args: {'username': u'zhangkun', 'host': u'174-185:174-186', 'password': '$6$rounds=656000$jHeBYx1zDr9j5dne$F72My8rekPLn1OuoR1uez0W6X.cDGUYV5HOpuE.n4PSTgYQEi2oH61QENLzN15vhRG.IsZiGL7LGYftIMrJEf.', 'user': u'root'}
+[2015-12-09 16:35:05,207] INFO - status: {'174-185': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}, '174-186': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2015-12-09 16:42:19,215] INFO - started: 1449650539
+[2015-12-09 16:42:19,215] INFO - yml_temp_name: _add_user
+[2015-12-09 16:42:19,216] INFO - args: {'username': u'baiguangyu', 'host': u'77-42', 'password': '$6$rounds=656000$hxc5/ycPTAmLLlvs$eQeTg/M9l5kCnYBWVRiQZMgWXXDVMx3Y37C3rFyB0mAuxE4blMD03zpwe/LPJOMrJ69vebJSnkDH.Q2Virerd1', 'user': u'root'}
+[2015-12-09 16:42:22,037] INFO - status: {'77-42': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}

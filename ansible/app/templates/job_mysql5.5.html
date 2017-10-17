@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Forms</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Form Elements</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+				<form role="form" method="post" action={{ url_for('jobs.mysql') }}>
+					{{ form.hidden_tag() if form.hidden_tag }}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Template Name</label>
+						<input type="text" class="form-control" id="exampleInputEmail1" readonly="true" name="yml_temp_name" value={{ yml_temp_name }}>
+                    </div>
+					<div class="control-group">
+						{{ form.selected_alias.label(class_="control-label", for="selectError1") }}
+
+						<div class="controls">
+							<select id="selectError1" multiple class="form-control" name="selected_alias" data-rel="chosen">
+								{% for i in form.selected_alias.choices %}
+								<option value={{ i[0] }}>{{ i[1] }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						{% if form.selected_alias.errors %}
+						{% for e in form.selected_alias.errors %}
+						<div class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>Oh snap!</strong> {{ e }}
+						</div>
+						{% endfor %}
+						{% endif %}
+					</div>
+					<br>
+					{% if form.remote_user.errors %}
+                    <div class="form-group has-error">
+						{{ form.remote_user.label(for="exampleInputEmail1") }}
+						{{ form.remote_user(class_="form-control", id="exampleInputEmail1", placeholder="Enter " + form.remote_user.label.text) }}
+						{% for e in form.remote_user.errors %}
+						<div class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>Oh snap!</strong> {{ e }}
+						</div>
+						{% endfor %}
+                    </div>
+					{% else %}
+                    <div class="form-group">
+						{{ form.remote_user.label(for="exampleInputEmail1") }}
+						{{ form.remote_user(class_="form-control", id="exampleInputEmail1", placeholder="Enter " + form.remote_user.label.text) }}
+                    </div>
+					{% endif %}
+					{% if form.mysql_data_dir.errors %}
+                    <div class="form-group has-error">
+						{{ form.mysql_data_dir.label(for="exampleInputEmail1") }}
+						{{ form.mysql_data_dir(class_="form-control", id="exampleInputEmail1", placeholder="Enter " + form.mysql_data_dir.label.text) }}
+						{% for e in form.mysql_data_dir.errors %}
+						<div class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>Oh snap!</strong> {{ e }}
+						</div>
+						{% endfor %}
+                    </div>
+					{% else %}
+                    <div class="form-group">
+						{{ form.mysql_data_dir.label(for="exampleInputEmail1") }}
+						{{ form.mysql_data_dir(class_="form-control", id="exampleInputEmail1", placeholder="Enter " + form.mysql_data_dir.label.text) }}
+                    </div>
+					{% endif %}
+				<br>
+				<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+{% endblock %}

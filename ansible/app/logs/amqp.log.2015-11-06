@@ -1,0 +1,30 @@
+[2015-11-06 17:35:47,533] INFO - started: 1446802547
+[2015-11-06 17:35:47,533] INFO - yml_temp_name: _mysql5.5
+[2015-11-06 17:35:47,534] INFO - args: {'host': u'atlassian-test', 'user': u'root', 'mysql_data_dir': u'/data'}
+[2015-11-06 17:47:00,852] ERROR - Traceback (most recent call last):
+  File "amqp_consumer_daemon.py", line 90, in run
+    chan.wait()
+  File "/usr/local/lib/python2.7/site-packages/amqplib/client_0_8/abstract_channel.py", line 97, in wait
+    return self.dispatch_method(method_sig, args, content)
+  File "/usr/local/lib/python2.7/site-packages/amqplib/client_0_8/abstract_channel.py", line 117, in dispatch_method
+    return amqp_method(self, args, content)
+  File "/usr/local/lib/python2.7/site-packages/amqplib/client_0_8/channel.py", line 2060, in _basic_deliver
+    func(msg)
+  File "amqp_consumer_daemon.py", line 70, in recv_callback
+    db.execute(upd_jobs_sql, pickle.dumps(status), finished, started)
+  File "/usr/local/lib/python2.7/site-packages/torndb.py", line 160, in execute
+    return self.execute_lastrowid(query, *parameters, **kwparameters)
+  File "/usr/local/lib/python2.7/site-packages/torndb.py", line 166, in execute_lastrowid
+    self._execute(cursor, query, parameters, kwparameters)
+  File "/usr/local/lib/python2.7/site-packages/torndb.py", line 234, in _execute
+    return cursor.execute(query, kwparameters or parameters)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (2006, 'MySQL server has gone away')
+
+[2015-11-06 17:47:00,855] INFO - started: 1446802624
+[2015-11-06 17:47:00,855] INFO - yml_temp_name: _mysql5.5
+[2015-11-06 17:47:00,855] INFO - args: {'host': u'atlassian-test', 'user': u'root', 'mysql_data_dir': u'/data'}
+[2015-11-06 17:47:23,751] INFO - status: {'atlassian-test': {'unreachable': 0, 'skipped': 1, 'ok': 20, 'changed': 11, 'failures': 0}}

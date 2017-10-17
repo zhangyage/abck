@@ -1,0 +1,21 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy mcrypt package
+  copy: src=mcrypt-{{ mcrypt_version }}.tar.gz dest=/tmp/mcrypt-{{ mcrypt_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf mcrypt-{{ mcrypt_version }}.tar.gz creates=/tmp/mcrypt-{{ mcrypt_version }}
+
+- name: Ldconfig
+  command: /sbin/ldconfig
+
+- name: Configure
+  command: chdir=/tmp/mcrypt-{{ mcrypt_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/mcrypt-{{ mcrypt_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/mcrypt-{{ mcrypt_version }} make install
+
+

@@ -1,0 +1,14 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+
+  roles:
+    - common 
+    - base
+    - libiconv
+    - libmcrypt
+    - mhash
+    - mcrypt
+    - pcre
+    - ImageMagick
+    - php

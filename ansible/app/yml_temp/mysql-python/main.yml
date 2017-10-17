@@ -1,0 +1,23 @@
+---
+- hosts: '{{ host}}'
+  remote_user: '{{ user }}'
+  tasks:
+
+    - name: Check mysql_config
+      command: which mysql_config
+      ignore_errors: true
+      register: result1
+
+    - name: Install mysql when not mysql_config
+      yum: name=mysql-devel state=present
+      #yum: name=mariadb-devel state=present
+      when: result1|failed
+
+    - name: Check mysql_config again
+      command: which mysql_config
+      ignore_errors: true
+      register: result2
+
+    - name: Install mysql-python
+      pip: name=mysql-python executable=pip-2.7
+      when: result2|success

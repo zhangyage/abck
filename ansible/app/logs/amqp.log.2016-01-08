@@ -1,0 +1,4 @@
+[2016-01-11 11:04:07,522] INFO - started: 1452481447
+[2016-01-11 11:04:07,522] INFO - yml_temp_name: _add_user
+[2016-01-11 11:04:07,523] INFO - args: {'username': u'zhangkun', 'host': u'174-186', 'password': '$6$rounds=656000$7l8donn.i8//OwR/$ScBL9mazKYKSvG6iBOUTRiPZ8D85THhhrvOZDbvK56s6e5/9jxZd.d3sOL0umqmzcVShZlzX4XUUkIUR7wG7E0', 'user': u'root'}
+[2016-01-11 11:04:12,590] INFO - status: {'174-186': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 1, 'failures': 0}}

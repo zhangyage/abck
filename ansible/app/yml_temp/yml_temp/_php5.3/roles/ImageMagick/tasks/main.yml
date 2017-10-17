@@ -1,0 +1,18 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy ImageMagick package
+  copy: src=ImageMagick-{{ ImageMagick_version }}.tar.gz dest=/tmp/ImageMagick-{{ ImageMagick_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf ImageMagick-{{ ImageMagick_version }}.tar.gz creates=/tmp/ImageMagick-{{ ImageMagick_version }}
+
+- name: Configure
+  command: chdir=/tmp/ImageMagick-{{ ImageMagick_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/ImageMagick-{{ ImageMagick_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/ImageMagick-{{ ImageMagick_version }} make install
+
+

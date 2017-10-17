@@ -1,0 +1,149 @@
+#增加以下内容
+[client]
+#character-set-server = utf8
+port    = 3306
+socket  = {{ mysql_data_dir }}/mysql/3306/mysql.sock
+
+[mysqld]
+bind-address = 0.0.0.0
+
+#服务器时区
+default-time-zone = system
+
+#character-set-server = utf8
+replicate-ignore-db = mysql
+replicate-ignore-db = test
+replicate-ignore-db = information_schema
+user    = mysql
+port    = 3306
+#socket  = /data/mysql/3306/mysql.sock
+socket   = {{ mysql_data_dir }}/mysql/3306/mysql.sock
+basedir = /usr/local/mysql
+datadir = {{ mysql_data_dir }}/mysql/3306/data
+log-error = {{ mysql_data_dir }}/mysql/3306/mysql_error.log
+pid-file = {{ mysql_data_dir }}/mysql/3306/mysql.pid
+
+#避免外部锁定，减少出错机率，增加稳定性
+#skip-locking
+
+open_files_limit    = 10240
+
+#对于没建立TCP连接的请求放入队列缓存中，受限制与OS参数
+back_log = 600
+
+max_connections = 10000
+max_connect_errors = 100
+
+# 所有线程所打开表的数量.
+# 增加此值就增加了mysqld所需要的文件描述符的数量
+# 这样你需要确认在[mysqld_safe]中 “open-files-limit” 变量设置打开文件数量允许至少4096
+table_cache = 614
+
+#从服务器超过此秒数没收到主服务器数据才通知网络中断
+slave-net-timeout = 600
+#从服务器读取信息的超时
+net_read_timeout = 30
+#从服务器写入信息的超时
+net_write_timeout = 60
+
+#如果某个端口中断了，在放弃前重试的次数
+net_retry_count = 10
+
+external-locking = FALSE
+max_allowed_packet = 32M
+sort_buffer_size = 1M
+join_buffer_size = 1M
+
+#每个线程的堆栈大小
+thread_cache_size = 300
+
+#thread_concurrency = 8
+
+#查询缓存大小
+query_cache_size = 512M
+#不缓存查询大于该值的结果
+query_cache_limit = 2M
+#查询缓存分配的最小块大小
+query_cache_min_res_unit = 2k
+
+
+#default-storage-engine = MyISAM
+default-storage-engine = InnoDB
+thread_stack = 192K
+transaction_isolation = READ-COMMITTED
+
+#临时表大小，如果超过该值，则结果放到磁盘中
+tmp_table_size = 2048M
+#该变量设置MEMORY(HEAP)表可以增长到的最大空间大小
+max_heap_table_size = 246M
+
+long_query_time = 3
+log-slave-updates
+log-bin = {{ mysql_data_dir }}/mysql/3306/binlog/binlog
+binlog_cache_size = 4M
+binlog_format = MIXED
+max_binlog_cache_size = 16M
+max_binlog_size = 1G
+relay-log-index = {{ mysql_data_dir }}/mysql/3306/relaylog/relaylog
+relay-log-info-file = {{ mysql_data_dir }}/mysql/3306/relaylog/relaylog
+relay-log = {{ mysql_data_dir }}/mysql/3306/relaylog/relaylog
+#bin_log删除时间
+expire_logs_days = 30
+
+#索引缓冲区大小，key_reads/key_read_requests应该尽可能低，1:100或者1:1000
+key_buffer_size = 2048M
+
+read_buffer_size = 1M
+read_buffer_size = 1M
+read_rnd_buffer_size = 16M
+bulk_insert_buffer_size = 64M
+myisam_sort_buffer_size = 128M
+myisam_max_sort_file_size = 10G
+myisam_repair_threads = 1
+myisam_recover
+
+interactive_timeout = 120
+wait_timeout = 120
+
+skip-name-resolve
+#master-connect-retry = 10
+slave-skip-errors = 1032,1062,126,1114,1146,1048,1396
+server-id = 1
+
+################################################################
+##2014-3-27 主备同步参数设置
+#master-host=10.6.3.4
+#master-user=flbackup
+#master-password=flpasswd
+#master-connect-retry=60
+#master-port     =  3306
+#
+##需要同步的数据库,如注释此处，则同步除不需要同步数据库外的所有库
+##binlog-do-db = test
+##
+##不需要同步的数据库
+##binlog-ignore-db = mysql
+#binlog-ignore-db = test
+################################################################
+
+
+
+innodb_additional_mem_pool_size = 16M
+innodb_buffer_pool_size = 512M
+innodb_data_file_path = ibdata1:256M:autoextend
+innodb_file_io_threads = 4
+innodb_thread_concurrency = 8
+innodb_flush_log_at_trx_commit = 2
+innodb_log_buffer_size = 16M
+innodb_log_file_size = 128M
+innodb_log_files_in_group = 3
+innodb_max_dirty_pages_pct = 90
+innodb_lock_wait_timeout = 120
+innodb_file_per_table = 0
+
+#log-slow-queries = /data/mysql/3306/slow.log
+#long_query_time = 10
+
+[mysqldump]
+quick
+max_allowed_packet = 32M

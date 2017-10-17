@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="box col-md-3">
+    <div class="box-inner">
+        <div class="box-header well">
+            <h2>Unordered List</h2>
+
+            <div class="box-icon">
+                <a href="#" class="btn btn-close btn-round btn-default"><i
+                        class="glyphicon glyphicon-remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <ul>
+				<li><a href={{ url_for('jobs.add_user') }}> Add User</a></li>
+				<li><a href={{ url_for('jobs.del_user') }}> Del User</a></li>
+				<li><a href={{ url_for('jobs.add_user_by_pubkey') }}> Add User By Pubkey</a></li>
+				<li><a href={{ url_for('jobs.mysql') }}> MySQL5.5</a></li>
+				<li><a href={{ url_for('jobs.php') }}> PHP5.3 Need MySQL5.5</a></li>
+                <li>Facilisis in pretium nisl aliquet</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/span-->
+{% endblock %}

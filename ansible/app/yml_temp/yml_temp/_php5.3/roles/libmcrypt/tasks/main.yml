@@ -1,0 +1,39 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy libmcrypt package
+  copy: src=libmcrypt-{{ libmcrypt_version }}.tar.gz dest=/tmp/libmcrypt-{{ libmcrypt_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf libmcrypt-{{ libmcrypt_version }}.tar.gz creates=/tmp/libmcrypt-{{ libmcrypt_version }}
+
+- name: Configure
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }} ./configure
+
+- name: Make
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }} make -j4
+
+- name: Make install
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }} make install
+
+- name: Ldconfig
+  command: /sbin/ldconfig
+
+- name: Configure libltdl
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }}/libltdl ./configure --enable-ltdl-install
+
+- name: Make
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }}/libltdl make -j4
+
+- name: Make install
+  command: chdir=/tmp/libmcrypt-{{ libmcrypt_version }}/libltdl make install
+
+#- name: Add lib to /usr/lib
+#  shell: ln -s /usr/local/lib/libmcrypt* /usr/lib/
+- name: Add lib to /usr/lib
+  lineinfile: dest=/etc/ld.so.conf line="/usr/local/lib"
+
+- name: Add bin to /usr/bin
+  shell: ln -sf /usr/local/bin/libmcrypt-config /usr/bin/
+
+- name: Ldconfig
+  command: /sbin/ldconfig

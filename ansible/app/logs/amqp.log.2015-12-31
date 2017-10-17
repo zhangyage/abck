@@ -1,0 +1,20 @@
+[2016-01-08 10:35:43,471] INFO - started: 1452220543
+[2016-01-08 10:35:43,472] INFO - yml_temp_name: _add_user
+[2016-01-08 10:35:43,472] INFO - args: {'username': u'liumingfei', 'host': u'191-246', 'password': '$6$rounds=656000$Il.8AnCQra3kijsV$UfF01Ggpb7Zaf.trMka00Yj0xYwIkK/GfNbWGAOv9FlUzOCH073q4xyd3YPXUwM9c71HOM5gQPg4EidvI3Y/b1', 'user': u'root'}
+[2016-01-08 10:35:48,261] INFO - status: {'191-246': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 2, 'failures': 0}}
+[2016-01-08 10:45:13,953] INFO - started: 1452221113
+[2016-01-08 10:45:13,953] INFO - yml_temp_name: _add_user
+[2016-01-08 10:45:13,953] INFO - args: {'username': u'liumingfei', 'host': u'30-99', 'password': '$6$rounds=656000$3RazkloVIscRQFcV$VQyDUgVHMwt4OLVAod.uDuxQMbdhq.vCa5JcAu1zWMKmsgI3zDMdRXyw6NO/yOVqgHbWBYP1kyYRNEDHMd.C/1', 'user': u'root'}
+[2016-01-08 10:45:58,533] INFO - status: {'30-99': {'unreachable': 0, 'skipped': 0, 'ok': 3, 'changed': 1, 'failures': 0}}
+[2016-01-08 10:55:25,034] INFO - started: 1452221725
+[2016-01-08 10:55:25,034] INFO - yml_temp_name: _add_user
+[2016-01-08 10:55:25,034] INFO - args: {'username': u'liumingfei', 'host': u'30-89', 'password': '$6$rounds=656000$mQCEZ2hG7IswJ1Jz$/M3/IcqT/kvy.qcCR/r32n4ON9muNBQvl2VaoN2B1mtQmWp8KtD1/tRQApgFrgu8wSyelIOf4QMhwuZr0pZ7g0', 'user': u'root'}
+[2016-01-08 10:55:28,243] INFO - status: {'30-89': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 1, 'failures': 1}}
+[2016-01-08 10:58:52,236] INFO - started: 1452221932
+[2016-01-08 10:58:52,236] INFO - yml_temp_name: _add_user
+[2016-01-08 10:58:52,237] INFO - args: {'username': u'liumingfei', 'host': u'30-89', 'password': '$6$rounds=656000$mQCEZ2hG7IswJ1Jz$/M3/IcqT/kvy.qcCR/r32n4ON9muNBQvl2VaoN2B1mtQmWp8KtD1/tRQApgFrgu8wSyelIOf4QMhwuZr0pZ7g0', 'user': u'root'}
+[2016-01-08 10:59:28,779] INFO - status: {'30-89': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 1}}
+[2016-01-08 11:49:35,678] INFO - started: 1452224975
+[2016-01-08 11:49:35,678] INFO - yml_temp_name: _del_user
+[2016-01-08 11:49:35,679] INFO - args: {'username': u'liumingfei', 'host': u'30-89', 'user': u'root'}
+[2016-01-08 11:50:28,070] INFO - status: {'30-89': {'unreachable': 0, 'skipped': 0, 'ok': 2, 'changed': 0, 'failures': 0}}

@@ -1,0 +1,51 @@
+---
+#- name: Download nginx
+#  get_url: url=http://tengine.taobao.org/download/tengine-{{ nginx_version }}.tar.gz dest=/tmp/tengine-{{ nginx_version }}.tar.gz sha256sum={{ nginx_sha256sum }}
+- name: Copy nginx package
+  copy: src=tengine-{{ nginx_version }}.tar.gz dest=/tmp/tengine-{{ nginx_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf tengine-{{ nginx_version }}.tar.gz creates=/tmp/tengine-{{ nginx_version }}
+
+- name: Configure
+  command: chdir=/tmp/tengine-{{ nginx_version }} ./configure \
+    --user=www \
+    --group=www \
+    --prefix=/usr/local/nginx \
+    --with-http_gzip_static_module \
+    --with-http_stub_status_module \
+    --with-http_ssl_module \
+    --with-pcre \
+    --with-file-aio
+
+- name: Make
+  command: chdir=/tmp/tengine-{{ nginx_version }} make -j4
+
+- name: Make intall
+  command: chdir=/tmp/tengine-{{ nginx_version }} make install
+
+- name: Add the user nginx to the system
+  user: name=www 
+
+- name: Copy nginx start scripts
+  template: src=etc-init.d-nginx dest=/etc/init.d/nginx mode=0755
+
+- name: Add nginx to system start
+  command: /sbin/chkconfig --add nginx
+
+- name: Add nginx to system start when init 345
+  command: /sbin/chkconfig --level 345 nginx on
+
+- name: Copy nginx config template
+  template: src=nginx.conf.j2 dest=/usr/local/nginx/conf/nginx.conf
+  notify: restart nginx
+
+- name: Mkdir vhosts dir
+  file: path=/usr/local/nginx/conf/vhosts state=directory
+
+- name: Copy nginx html config template
+  template: src=html.localhost.conf.j2 dest=/usr/local/nginx/conf/vhosts/html.localhost.conf
+  notify: restart nginx
+
+- name: Copy nginx php config template
+  template: src=php.localhost.conf.j2 dest=/usr/local/nginx/conf/vhosts/php.localhost.conf.orig

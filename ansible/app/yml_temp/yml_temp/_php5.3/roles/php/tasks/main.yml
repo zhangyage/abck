@@ -1,0 +1,97 @@
+#- name: Download mysql package
+#  get_url: url=http://download.softagency.net/MySQL/Downloads/MySQL-5.5/mysql-{{ mysql_version }}.tar.gz dest=/tmp/mysql-{{ mysql_version }}.tar.gz sha256sum={{ mysql_sha256sum}}
+- name: Copy php package
+  copy: src=php-{{ php_version }}.tar.gz dest=/tmp/php-{{ php_version }}.tar.gz
+
+- name: Extrect archive
+  command: chdir=/tmp/ /bin/tar xvf php-{{ php_version }}.tar.gz creates=/tmp/php-{{ php_version }}
+
+- name: Config
+  command: chdir=/tmp/php-{{ php_version }} ./configure --prefix=/usr/local/php \
+    --with-config-file-path=/usr/local/php/etc \
+    --with-iconv-dir=/usr/local \
+    --with-freetype-dir \
+    --with-mysql=/usr/local/mysql \
+    --with-mysqli=mysqlnd \
+    --with-jpeg-dir \
+    --with-png-dir \
+    --with-zlib \
+    --with-mhash \
+    --enable-sockets \
+    --enable-ftp \
+    --with-libxml-dir \
+    --enable-xml \
+    --disable-rpath \
+    --enable-safe-mode \
+    --enable-bcmath \
+    --enable-shmop \
+    --enable-sysvsem \
+    --enable-inline-optimization --with-curl \
+    --with-curlwrappers \
+    --enable-mbregex \
+    --enable-mbstring \
+    --with-mcrypt \
+    --with-gd \
+    --enable-gd-native-ttf \
+    --with-openssl \
+    --with-mhash \
+    --enable-pcntl \
+    --enable-sockets \
+    --with-ldap \
+    --with-ldap-sasl \
+    --enable-fpm \
+    --with-xmlrpc \
+    --enable-zip \
+    --enable-soap \
+    --without-pear
+
+- name: Make
+  command: chdir=/tmp/php-{{ php_version }} make -j4 ZEND_EXTRA_LIBS='-liconv'
+
+- name: Make install
+  command: chdir=/tmp/php-{{ php_version }} make install
+
+# php module
+- include: ../../memcache/tasks/main.yml
+- include: ../../eaccelerator/tasks/main.yml
+- include: ../../PDO_MYSQL/tasks/main.yml
+- include: ../../imagick/tasks/main.yml
+
+- name: Make php-fpm dir
+  file: dest={{ mysql_data_dir }}/logs/php-fpm state=directory
+
+- name: Copy php.ini template
+  template: src=php.ini.j2 dest=/usr/local/php/etc/php.ini
+
+- name: Copy php-fpm.conf template
+  template: src=php-fpm.conf.j2 dest=/usr/local/php/etc/php-fpm.conf
+
+- name: Copy php-fpm to init when system start
+  command: cp -f /tmp/php-{{ php_version }}/sapi/fpm/init.d.php-fpm.in /etc/init.d/php-fpm
+
+- name: Add +x for php-fpm
+  file: path=/etc/init.d/php-fpm owner=root group=root mode=0755
+
+- name: Edit php-fpm prefix
+  lineinfile: dest=/etc/init.d/php-fpm regexp="^prefix=" line="prefix="
+
+- name: Edit php-fpm exec_prefix
+  lineinfile: dest=/etc/init.d/php-fpm regexp="^exec_prefix=" line="exec_prefix="
+
+- name: Edit php-fpm php_fpm_BIN
+  lineinfile: dest=/etc/init.d/php-fpm regexp="^php_fpm_BIN=" line="php_fpm_BIN=/usr/local/php/sbin/php-fpm"
+
+- name: Edit php-fpm php_fpm_CONF
+  lineinfile: dest=/etc/init.d/php-fpm regexp="^php_fpm_CONF=" line="php_fpm_CONF=/usr/local/php/etc/php-fpm.conf"
+
+- name: Edit php-fpm php_fpm_PID
+  lineinfile: dest=/etc/init.d/php-fpm regexp="^php_fpm_PID" line="php_fpm_PID=/var/run/php-fpm.pid"
+
+- name: Add php-fpm to system start
+  command: /sbin/chkconfig --add php-fpm
+
+- name: Add php-fpm to system start when init 345
+  command: /sbin/chkconfig --level 345 php-fpm on
+
+- name: Retart php-fpm
+  service: name=php-fpm state=restarted

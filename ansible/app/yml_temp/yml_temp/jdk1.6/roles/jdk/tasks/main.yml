@@ -1,0 +1,29 @@
+---
+- name: Copy
+  copy: src=jdk-{{ jdk_version }}-linux-x64.bin dest=/tmp/jdk-{{ jdk_version }}-linux-x64.bin mode=0755
+
+- name: If java home is exists
+  shell: ls /opt/jdk1.6.0_45 -d
+  register: result
+  ignore_errors: true
+
+- name: Remove java home if java is exists
+  shell: rm -rf /opt/jdk1.6.0_45
+  when: result|success
+
+- name: Execute if java is exists
+  shell: chdir=/opt /tmp/jdk-{{ jdk_version }}-linux-x64.bin
+  when: result|success
+
+- name: Execute if java not is exists
+  shell: chdir=/opt /tmp/jdk-{{ jdk_version }}-linux-x64.bin
+  when: result|failed
+
+- name: Set java home
+  lineinfile: dest=/etc/profile line="export JAVA_HOME=/opt/jdk1.6.0_45"
+
+- name: Set java path
+  lineinfile: dest=/etc/profile line="export PATH=$PATH:/opt/jdk1.6.0_45/bin"
+
+- name: Update profile
+  shell: executable=/bin/bash source /etc/profile

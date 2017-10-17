@@ -1,0 +1,565 @@
+*******************************************************************************
+Aug 10 2015 17:57:22 - 100-67 - OK - cmd:rpm -qa|grep libselinux-python
+Aug 10 2015 17:57:22 - 100-67 - OK - start:2015-08-10 17:56:17.495608
+Aug 10 2015 17:57:22 - 100-67 - OK - end:2015-08-10 17:56:17.794865
+Aug 10 2015 17:57:22 - 100-67 - OK - delta:0:00:00.299257
+Aug 10 2015 17:57:22 - 100-67 - OK - stderr:
+Aug 10 2015 17:57:22 - 100-67 - OK - msg:
+Aug 10 2015 17:57:23 - 100-67 - OK - msg:
+Aug 10 2015 17:57:23 - 100-67 - OK - msg:
+Aug 10 2015 17:57:23 - 100-67 - OK - msg:
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+Oct 13 2015 18:54:09 - python-test - OK - cmd:rpm -qa|grep libselinux-python
+Oct 13 2015 18:54:09 - python-test - OK - start:2015-10-14 02:36:08.898173
+Oct 13 2015 18:54:09 - python-test - OK - end:2015-10-14 02:36:09.254618
+Oct 13 2015 18:54:09 - python-test - OK - delta:0:00:00.356445
+Oct 13 2015 18:54:09 - python-test - OK - stderr:
+Oct 13 2015 18:54:09 - python-test - OK - msg:
+Oct 13 2015 18:54:10 - python-test - OK - msg:
+Oct 13 2015 18:54:13 - python-test - OK - cmd:[u'/bin/tar', u'xvf', u'Python-2.7.9.tgz']
+Oct 13 2015 18:54:13 - python-test - OK - start:2015-10-14 02:36:13.118473
+Oct 13 2015 18:54:13 - python-test - OK - end:2015-10-14 02:36:13.727563
+Oct 13 2015 18:54:13 - python-test - OK - delta:0:00:00.609090
+Oct 13 2015 18:54:13 - python-test - OK - stderr:
+Oct 13 2015 18:54:24 - python-test - OK - cmd:[u'./configure']
+Oct 13 2015 18:54:24 - python-test - OK - start:2015-10-14 02:36:14.008083
+Oct 13 2015 18:54:24 - python-test - OK - end:2015-10-14 02:36:24.040804
+Oct 13 2015 18:54:24 - python-test - OK - delta:0:00:10.032721
+Oct 13 2015 18:54:24 - python-test - OK - stderr:configure: WARNING:
+
+  By default, distutils will build C++ extension modules with "g++".
+  If this is not intended, then set CXX on the configure command line.
+  
+Oct 13 2015 18:55:31 - python-test - OK - cmd:[u'make', u'-j4']
+Oct 13 2015 18:55:31 - python-test - OK - start:2015-10-14 02:36:24.305503
+Oct 13 2015 18:55:31 - python-test - OK - end:2015-10-14 02:37:30.964412
+Oct 13 2015 18:55:31 - python-test - OK - delta:0:01:06.658909
+Oct 13 2015 18:55:31 - python-test - OK - stderr:Objects/fileobject.c: In function ‘file_write’:
+Objects/fileobject.c:1807: warning: ‘err’ may be used uninitialized in this function
+libpython2.7.a(posixmodule.o): In function `posix_tmpnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7575: warning: the use of `tmpnam_r' is dangerous, better use `mkstemp'
+libpython2.7.a(posixmodule.o): In function `posix_tempnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7522: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+/tmp/Python-2.7.9/Modules/cPickle.c: In function ‘read_cStringIO’:
+/tmp/Python-2.7.9/Modules/cPickle.c:617: warning: ‘start’ may be used uninitialized in this function
+In file included from /tmp/Python-2.7.9/./Modules/expat/expat_config.h:8,
+                 from /tmp/Python-2.7.9/Modules/expat/xmlparse.c:22:
+./pyconfig.h:1182:1: warning: "_POSIX_C_SOURCE" redefined
+In file included from /usr/include/string.h:27,
+                 from /tmp/Python-2.7.9/Modules/expat/xmlparse.c:6:
+/usr/include/features.h:213:1: warning: this is the location of the previous definition
+Oct 13 2015 18:56:37 - python-test - OK - cmd:[u'make', u'install']
+Oct 13 2015 18:56:37 - python-test - OK - start:2015-10-14 02:37:31.231941
+Oct 13 2015 18:56:37 - python-test - OK - end:2015-10-14 02:38:37.071051
+Oct 13 2015 18:56:37 - python-test - OK - delta:0:01:05.839110
+Oct 13 2015 18:56:37 - python-test - OK - stderr:
+Oct 13 2015 18:56:37 - python-test - OK - cmd:[u'/bin/tar', u'xvf', u'setuptools-0.6c11.tar.gz']
+Oct 13 2015 18:56:37 - python-test - OK - start:2015-10-14 02:38:37.854797
+Oct 13 2015 18:56:37 - python-test - OK - end:2015-10-14 02:38:37.866451
+Oct 13 2015 18:56:37 - python-test - OK - delta:0:00:00.011654
+Oct 13 2015 18:56:37 - python-test - OK - stderr:
+Oct 13 2015 18:56:38 - python-test - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Oct 13 2015 18:56:38 - python-test - OK - start:2015-10-14 02:38:38.125232
+Oct 13 2015 18:56:38 - python-test - OK - end:2015-10-14 02:38:38.357286
+Oct 13 2015 18:56:38 - python-test - OK - delta:0:00:00.232054
+Oct 13 2015 18:56:38 - python-test - OK - stderr:
+Oct 13 2015 18:56:39 - python-test - OK - cmd:[u'/bin/tar', u'xvf', u'/tmp/pip-1.4.1.tar.gz']
+Oct 13 2015 18:56:39 - python-test - OK - start:2015-10-14 02:38:39.103303
+Oct 13 2015 18:56:39 - python-test - OK - end:2015-10-14 02:38:39.121127
+Oct 13 2015 18:56:39 - python-test - OK - delta:0:00:00.017824
+Oct 13 2015 18:56:39 - python-test - OK - stderr:
+Oct 13 2015 18:56:40 - python-test - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Oct 13 2015 18:56:40 - python-test - OK - start:2015-10-14 02:38:39.384010
+Oct 13 2015 18:56:40 - python-test - OK - end:2015-10-14 02:38:39.984755
+Oct 13 2015 18:56:40 - python-test - OK - delta:0:00:00.600745
+Oct 13 2015 18:56:40 - python-test - OK - stderr:warning: no files found matching '*.html' under directory 'docs'
+warning: no previously-included files matching '*.rst' found under directory 'docs/_build'
+no previously-included directories found matching 'docs/_build/_sources'
+*******************************************************************************
+Oct 13 2015 19:00:02 - python-test - OK - cmd:rpm -qa|grep libselinux-python
+Oct 13 2015 19:00:02 - python-test - OK - start:2015-10-14 02:42:01.708964
+Oct 13 2015 19:00:02 - python-test - OK - end:2015-10-14 02:42:02.068037
+Oct 13 2015 19:00:02 - python-test - OK - delta:0:00:00.359073
+Oct 13 2015 19:00:02 - python-test - OK - stderr:
+Oct 13 2015 19:00:02 - python-test - OK - msg:
+Oct 13 2015 19:00:03 - python-test - OK - msg:
+Oct 13 2015 19:00:04 - python-test - OK - cmd:/bin/tar xvf Python-2.7.9.tgz
+Oct 13 2015 19:00:04 - python-test - OK - stderr:False
+Oct 13 2015 19:00:14 - python-test - OK - cmd:[u'./configure']
+Oct 13 2015 19:00:14 - python-test - OK - start:2015-10-14 02:42:04.557350
+Oct 13 2015 19:00:14 - python-test - OK - end:2015-10-14 02:42:14.731137
+Oct 13 2015 19:00:14 - python-test - OK - delta:0:00:10.173787
+Oct 13 2015 19:00:14 - python-test - OK - stderr:configure: WARNING:
+
+  By default, distutils will build C++ extension modules with "g++".
+  If this is not intended, then set CXX on the configure command line.
+  
+Oct 13 2015 19:00:16 - python-test - OK - cmd:[u'make', u'-j4']
+Oct 13 2015 19:00:16 - python-test - OK - start:2015-10-14 02:42:14.995752
+Oct 13 2015 19:00:16 - python-test - OK - end:2015-10-14 02:42:16.080940
+Oct 13 2015 19:00:16 - python-test - OK - delta:0:00:01.085188
+Oct 13 2015 19:00:16 - python-test - OK - stderr:libpython2.7.a(posixmodule.o): In function `posix_tmpnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7575: warning: the use of `tmpnam_r' is dangerous, better use `mkstemp'
+libpython2.7.a(posixmodule.o): In function `posix_tempnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7522: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+Oct 13 2015 19:01:22 - python-test - OK - cmd:[u'make', u'install']
+Oct 13 2015 19:01:22 - python-test - OK - start:2015-10-14 02:42:16.335977
+Oct 13 2015 19:01:22 - python-test - OK - end:2015-10-14 02:43:22.783489
+Oct 13 2015 19:01:22 - python-test - OK - delta:0:01:06.447512
+Oct 13 2015 19:01:22 - python-test - OK - stderr:
+Oct 13 2015 19:01:23 - python-test - OK - cmd:/bin/tar xvf setuptools-0.6c11.tar.gz
+Oct 13 2015 19:01:23 - python-test - OK - stderr:False
+Oct 13 2015 19:01:23 - python-test - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Oct 13 2015 19:01:23 - python-test - OK - start:2015-10-14 02:43:23.687165
+Oct 13 2015 19:01:23 - python-test - OK - end:2015-10-14 02:43:23.878033
+Oct 13 2015 19:01:23 - python-test - OK - delta:0:00:00.190868
+Oct 13 2015 19:01:23 - python-test - OK - stderr:
+Oct 13 2015 19:01:24 - python-test - OK - cmd:/bin/tar xvf /tmp/pip-1.4.1.tar.gz
+Oct 13 2015 19:01:24 - python-test - OK - stderr:False
+Oct 13 2015 19:01:25 - python-test - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Oct 13 2015 19:01:25 - python-test - OK - start:2015-10-14 02:43:24.754509
+Oct 13 2015 19:01:25 - python-test - OK - end:2015-10-14 02:43:25.352867
+Oct 13 2015 19:01:25 - python-test - OK - delta:0:00:00.598358
+Oct 13 2015 19:01:25 - python-test - OK - stderr:warning: no files found matching '*.html' under directory 'docs'
+warning: no previously-included files matching '*.rst' found under directory 'docs/_build'
+no previously-included directories found matching 'docs/_build/_sources'
+*******************************************************************************
+Nov 05 2015 16:02:34 - atlassian-test - FAILED - cmd:ls /opt/jdk1.6.0_45 -d
+Nov 05 2015 16:02:34 - atlassian-test - FAILED - start:2015-11-05 23:40:34.349560
+Nov 05 2015 16:02:34 - atlassian-test - FAILED - end:2015-11-05 23:40:34.351980
+Nov 05 2015 16:02:34 - atlassian-test - FAILED - delta:0:00:00.002420
+Nov 05 2015 16:02:34 - atlassian-test - FAILED - stderr:ls: cannot access /opt/jdk1.6.0_45: No such file or directory
+Nov 05 2015 16:02:38 - atlassian-test - OK - cmd:/tmp/jdk-6u45-linux-x64.bin
+Nov 05 2015 16:02:38 - atlassian-test - OK - start:2015-11-05 23:40:34.639919
+Nov 05 2015 16:02:38 - atlassian-test - OK - end:2015-11-05 23:40:37.485876
+Nov 05 2015 16:02:38 - atlassian-test - OK - delta:0:00:02.845957
+Nov 05 2015 16:02:38 - atlassian-test - OK - stderr:
+Nov 05 2015 16:02:38 - atlassian-test - OK - msg:line added
+Nov 05 2015 16:02:38 - atlassian-test - OK - msg:line added
+Nov 05 2015 16:02:38 - atlassian-test - OK - cmd:source /etc/profile
+Nov 05 2015 16:02:38 - atlassian-test - OK - start:2015-11-05 23:40:38.413975
+Nov 05 2015 16:02:38 - atlassian-test - OK - end:2015-11-05 23:40:38.418898
+Nov 05 2015 16:02:38 - atlassian-test - OK - delta:0:00:00.004923
+Nov 05 2015 16:02:38 - atlassian-test - OK - stderr:
+*******************************************************************************
+Nov 06 2015 17:35:50 - atlassian-test - OK - cmd:rpm -qa|grep libselinux-python
+Nov 06 2015 17:35:50 - atlassian-test - OK - start:2015-11-07 01:13:49.394898
+Nov 06 2015 17:35:50 - atlassian-test - OK - end:2015-11-07 01:13:49.587663
+Nov 06 2015 17:35:50 - atlassian-test - OK - delta:0:00:00.192765
+Nov 06 2015 17:35:50 - atlassian-test - OK - stderr:
+Nov 06 2015 17:37:44 - atlassian-test - OK - msg:
+Nov 06 2015 17:37:48 - atlassian-test - OK - cmd:[u'/bin/tar', u'xvf', u'mysql-5.5.42.tar.gz']
+Nov 06 2015 17:37:48 - atlassian-test - OK - start:2015-11-07 01:15:46.374582
+Nov 06 2015 17:37:48 - atlassian-test - OK - end:2015-11-07 01:15:47.817106
+Nov 06 2015 17:37:48 - atlassian-test - OK - delta:0:00:01.442524
+Nov 06 2015 17:37:48 - atlassian-test - OK - stderr:
+Nov 06 2015 17:38:11 - atlassian-test - OK - cmd:[u'cmake', u'-DCMAKE_INSTALL_PREFIX=/usr/local/mysql', u'-DMYSQL_UNIX_ADDR=/data/mysql/mysql.sock', u'-DDEFAULT_CHARSET=utf8', u'-DDEFAULT_COLLATION=utf8_general_ci', u'-DEXTRA_CHARSETS=all', u'-DWITH_MYISAM_STORAGE_ENGINE=1', u'-DWITH_INNOBASE_STORAGE_ENGINE=1', u'-DWITH_READLINE=1', u'-DENABLED_LOCAL_INFILE=1', u'-DWITH_EMBEDDED_SERVER=1', u'-DENABLED_ASSEMBLER=1', u'-DWITH_SSL=yes', u'-DWITH_BIG_TABLES=1', u'-DMYSQL_DATADIR=$data_dir/mysql', u'-DMYSQL_USER=mysql', u'-DMYSQL_TCP_PORT=3306']
+Nov 06 2015 17:38:11 - atlassian-test - OK - start:2015-11-07 01:15:48.158874
+Nov 06 2015 17:38:11 - atlassian-test - OK - end:2015-11-07 01:16:10.675829
+Nov 06 2015 17:38:11 - atlassian-test - OK - delta:0:00:22.516955
+Nov 06 2015 17:38:11 - atlassian-test - OK - stderr:CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ENABLED_ASSEMBLER
+    MYSQL_USER
+    WITH_BIG_TABLES
+Nov 06 2015 17:46:20 - atlassian-test - OK - cmd:[u'make', u'-j4']
+Nov 06 2015 17:46:20 - atlassian-test - OK - start:2015-11-07 01:16:10.908074
+Nov 06 2015 17:46:20 - atlassian-test - OK - end:2015-11-07 01:24:19.559555
+Nov 06 2015 17:46:20 - atlassian-test - OK - delta:0:08:08.651481
+Nov 06 2015 17:46:20 - atlassian-test - OK - stderr:/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c: In function ‘dict_foreign_remove_from_cache’:
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2536: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2555: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c: In function ‘dict_foreign_find’:
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2591: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2602: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c: In function ‘dict_foreign_remove_from_cache’:
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2536: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2555: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c: In function ‘dict_foreign_find’:
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2591: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0dict.c:2602: warning: dereferencing type-punned pointer will break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c: In function ‘dict_load_foreigns’:
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:370: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:371: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:372: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:373: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:369: note: initialized from here
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c:2394: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c:2393: note: initialized from here
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c: In function ‘dict_load_foreigns’:
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:370: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:371: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:372: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:373: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/include/data0data.ic:369: note: initialized from here
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c:2394: warning: dereferencing pointer ‘tuple’ does break strict-aliasing rules
+/tmp/mysql-5.5.42/storage/innobase/dict/dict0load.c:2393: note: initialized from here
+CMakeFiles/perror.dir/perror.c.o: In function `main':
+/tmp/mysql-5.5.42/extra/perror.c:305: warning: `sys_errlist' is deprecated; use `strerror' or `strerror_r' instead
+/tmp/mysql-5.5.42/extra/perror.c:303: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
+/usr/bin/ar: creating /tmp/mysql-5.5.42/libmysql/libmysqlclient.a
+/tmp/mysql-5.5.42/client/mysqltest.cc: In function ‘char* re_eprint(int)’:
+/tmp/mysql-5.5.42/client/mysqltest.cc:8089: warning: unused variable ‘len’
+/tmp/mysql-5.5.42/sql/log.cc: In member function ‘void LOGGER::deactivate_log_handler(THD*, uint)’:
+/tmp/mysql-5.5.42/sql/log.cc:1441: warning: ‘file_log’ may be used uninitialized in this function
+/tmp/mysql-5.5.42/sql/log.cc: In member function ‘void LOGGER::deactivate_log_handler(THD*, uint)’:
+/tmp/mysql-5.5.42/sql/log.cc:1441: warning: ‘file_log’ may be used uninitialized in this function
+/tmp/mysql-5.5.42/sql/sql_partition.cc: In function ‘int get_part_iter_for_interval_cols_via_map(partition_info*, bool, uint32*, uchar*, uchar*, uint, uint, uint, PARTITION_ITERATOR*)’:
+/tmp/mysql-5.5.42/sql/sql_partition.cc:7627: warning: ‘get_col_endpoint’ may be used uninitialized in this function
+/tmp/mysql-5.5.42/sql/sql_partition.cc: In function ‘int get_part_iter_for_interval_cols_via_map(partition_info*, bool, uint32*, uchar*, uchar*, uint, uint, uint, PARTITION_ITERATOR*)’:
+/tmp/mysql-5.5.42/sql/sql_partition.cc:7627: warning: ‘get_col_endpoint’ may be used uninitialized in this function
+/tmp/mysql-5.5.42/sql/sql_repl.cc: In function ‘bool log_in_use(const char*)’:
+/tmp/mysql-5.5.42/sql/sql_repl.cc:253: warning: suggest braces around empty body in an ‘if’ statement
+/usr/bin/ar: creating /tmp/mysql-5.5.42/libmysqld/libmysqld.a
+/tmp/mysql-5.5.42/client/mysqltest.cc: In function ‘char* re_eprint(int)’:
+/tmp/mysql-5.5.42/client/mysqltest.cc:8089: warning: unused variable ‘len’
+Nov 06 2015 17:46:26 - atlassian-test - OK - cmd:[u'make', u'install']
+Nov 06 2015 17:46:26 - atlassian-test - OK - start:2015-11-07 01:24:19.838977
+Nov 06 2015 17:46:26 - atlassian-test - OK - end:2015-11-07 01:24:25.819221
+Nov 06 2015 17:46:26 - atlassian-test - OK - delta:0:00:05.980244
+Nov 06 2015 17:46:26 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:27 - atlassian-test - OK - msg:line added
+Nov 06 2015 17:46:28 - atlassian-test - OK - cmd:[u'/sbin/ldconfig']
+Nov 06 2015 17:46:28 - atlassian-test - OK - start:2015-11-07 01:24:27.284760
+Nov 06 2015 17:46:28 - atlassian-test - OK - end:2015-11-07 01:24:27.300492
+Nov 06 2015 17:46:28 - atlassian-test - OK - delta:0:00:00.015732
+Nov 06 2015 17:46:28 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:30 - atlassian-test - OK - cmd:[u'/usr/local/mysql/scripts/mysql_install_db', u'--user=mysql', u'--basedir=/usr/local/mysql', u'--datadir=/data/mysql/3306/data']
+Nov 06 2015 17:46:30 - atlassian-test - OK - start:2015-11-07 01:24:29.381695
+Nov 06 2015 17:46:30 - atlassian-test - OK - end:2015-11-07 01:24:29.759372
+Nov 06 2015 17:46:30 - atlassian-test - OK - delta:0:00:00.377677
+Nov 06 2015 17:46:30 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:31 - atlassian-test - OK - msg:line added
+Nov 06 2015 17:46:31 - atlassian-test - OK - cmd:source /etc/profile
+Nov 06 2015 17:46:31 - atlassian-test - OK - start:2015-11-07 01:24:30.334672
+Nov 06 2015 17:46:31 - atlassian-test - OK - end:2015-11-07 01:24:30.340647
+Nov 06 2015 17:46:31 - atlassian-test - OK - delta:0:00:00.005975
+Nov 06 2015 17:46:31 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:31 - atlassian-test - OK - cmd:[u'cp', u'-f', u'/usr/local/mysql/support-files/mysql.server', u'/etc/init.d/mysqld']
+Nov 06 2015 17:46:31 - atlassian-test - OK - start:2015-11-07 01:24:30.631606
+Nov 06 2015 17:46:31 - atlassian-test - OK - end:2015-11-07 01:24:30.634029
+Nov 06 2015 17:46:31 - atlassian-test - OK - delta:0:00:00.002423
+Nov 06 2015 17:46:31 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:36 - atlassian-test - OK - cmd:[u'/sbin/chkconfig', u'--add', u'mysqld']
+Nov 06 2015 17:46:36 - atlassian-test - OK - start:2015-11-07 01:24:33.684070
+Nov 06 2015 17:46:36 - atlassian-test - OK - end:2015-11-07 01:24:35.287611
+Nov 06 2015 17:46:36 - atlassian-test - OK - delta:0:00:01.603541
+Nov 06 2015 17:46:36 - atlassian-test - OK - stderr:
+Nov 06 2015 17:46:36 - atlassian-test - OK - cmd:[u'/sbin/chkconfig', u'--level', u'345', u'mysqld', u'on']
+Nov 06 2015 17:46:36 - atlassian-test - OK - start:2015-11-07 01:24:35.553672
+Nov 06 2015 17:46:36 - atlassian-test - OK - end:2015-11-07 01:24:35.561666
+Nov 06 2015 17:46:36 - atlassian-test - OK - delta:0:00:00.007994
+Nov 06 2015 17:46:36 - atlassian-test - OK - stderr:
+*******************************************************************************
+Nov 06 2015 17:47:01 - atlassian-test - OK - cmd:rpm -qa|grep libselinux-python
+Nov 06 2015 17:47:01 - atlassian-test - OK - start:2015-11-07 01:25:00.605272
+Nov 06 2015 17:47:01 - atlassian-test - OK - end:2015-11-07 01:25:00.795145
+Nov 06 2015 17:47:01 - atlassian-test - OK - delta:0:00:00.189873
+Nov 06 2015 17:47:01 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:02 - atlassian-test - OK - msg:
+Nov 06 2015 17:47:03 - atlassian-test - OK - cmd:/bin/tar xvf mysql-5.5.42.tar.gz
+Nov 06 2015 17:47:03 - atlassian-test - OK - stderr:False
+Nov 06 2015 17:47:05 - atlassian-test - OK - cmd:[u'cmake', u'-DCMAKE_INSTALL_PREFIX=/usr/local/mysql', u'-DMYSQL_UNIX_ADDR=/data/mysql/mysql.sock', u'-DDEFAULT_CHARSET=utf8', u'-DDEFAULT_COLLATION=utf8_general_ci', u'-DEXTRA_CHARSETS=all', u'-DWITH_MYISAM_STORAGE_ENGINE=1', u'-DWITH_INNOBASE_STORAGE_ENGINE=1', u'-DWITH_READLINE=1', u'-DENABLED_LOCAL_INFILE=1', u'-DWITH_EMBEDDED_SERVER=1', u'-DENABLED_ASSEMBLER=1', u'-DWITH_SSL=yes', u'-DWITH_BIG_TABLES=1', u'-DMYSQL_DATADIR=$data_dir/mysql', u'-DMYSQL_USER=mysql', u'-DMYSQL_TCP_PORT=3306']
+Nov 06 2015 17:47:05 - atlassian-test - OK - start:2015-11-07 01:25:03.074448
+Nov 06 2015 17:47:05 - atlassian-test - OK - end:2015-11-07 01:25:04.202913
+Nov 06 2015 17:47:05 - atlassian-test - OK - delta:0:00:01.128465
+Nov 06 2015 17:47:05 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:10 - atlassian-test - OK - cmd:[u'make', u'-j4']
+Nov 06 2015 17:47:10 - atlassian-test - OK - start:2015-11-07 01:25:04.470373
+Nov 06 2015 17:47:10 - atlassian-test - OK - end:2015-11-07 01:25:10.026134
+Nov 06 2015 17:47:10 - atlassian-test - OK - delta:0:00:05.555761
+Nov 06 2015 17:47:10 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:16 - atlassian-test - OK - cmd:[u'make', u'install']
+Nov 06 2015 17:47:16 - atlassian-test - OK - start:2015-11-07 01:25:10.293457
+Nov 06 2015 17:47:16 - atlassian-test - OK - end:2015-11-07 01:25:15.246240
+Nov 06 2015 17:47:16 - atlassian-test - OK - delta:0:00:04.952783
+Nov 06 2015 17:47:16 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:16 - atlassian-test - OK - msg:
+Nov 06 2015 17:47:16 - atlassian-test - OK - cmd:[u'/sbin/ldconfig']
+Nov 06 2015 17:47:16 - atlassian-test - OK - start:2015-11-07 01:25:15.874788
+Nov 06 2015 17:47:16 - atlassian-test - OK - end:2015-11-07 01:25:15.883538
+Nov 06 2015 17:47:16 - atlassian-test - OK - delta:0:00:00.008750
+Nov 06 2015 17:47:16 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:19 - atlassian-test - OK - cmd:[u'/usr/local/mysql/scripts/mysql_install_db', u'--user=mysql', u'--basedir=/usr/local/mysql', u'--datadir=/data/mysql/3306/data']
+Nov 06 2015 17:47:19 - atlassian-test - OK - start:2015-11-07 01:25:17.725789
+Nov 06 2015 17:47:19 - atlassian-test - OK - end:2015-11-07 01:25:18.077681
+Nov 06 2015 17:47:19 - atlassian-test - OK - delta:0:00:00.351892
+Nov 06 2015 17:47:19 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:19 - atlassian-test - OK - msg:
+Nov 06 2015 17:47:19 - atlassian-test - OK - cmd:source /etc/profile
+Nov 06 2015 17:47:19 - atlassian-test - OK - start:2015-11-07 01:25:18.644591
+Nov 06 2015 17:47:19 - atlassian-test - OK - end:2015-11-07 01:25:18.650588
+Nov 06 2015 17:47:19 - atlassian-test - OK - delta:0:00:00.005997
+Nov 06 2015 17:47:19 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:19 - atlassian-test - OK - cmd:[u'cp', u'-f', u'/usr/local/mysql/support-files/mysql.server', u'/etc/init.d/mysqld']
+Nov 06 2015 17:47:19 - atlassian-test - OK - start:2015-11-07 01:25:18.923088
+Nov 06 2015 17:47:19 - atlassian-test - OK - end:2015-11-07 01:25:18.925080
+Nov 06 2015 17:47:19 - atlassian-test - OK - delta:0:00:00.001992
+Nov 06 2015 17:47:19 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:20 - atlassian-test - OK - cmd:[u'/sbin/chkconfig', u'--add', u'mysqld']
+Nov 06 2015 17:47:20 - atlassian-test - OK - start:2015-11-07 01:25:19.194410
+Nov 06 2015 17:47:20 - atlassian-test - OK - end:2015-11-07 01:25:19.202382
+Nov 06 2015 17:47:20 - atlassian-test - OK - delta:0:00:00.007972
+Nov 06 2015 17:47:20 - atlassian-test - OK - stderr:
+Nov 06 2015 17:47:20 - atlassian-test - OK - cmd:[u'/sbin/chkconfig', u'--level', u'345', u'mysqld', u'on']
+Nov 06 2015 17:47:20 - atlassian-test - OK - start:2015-11-07 01:25:19.464948
+Nov 06 2015 17:47:20 - atlassian-test - OK - end:2015-11-07 01:25:19.472725
+Nov 06 2015 17:47:20 - atlassian-test - OK - delta:0:00:00.007777
+Nov 06 2015 17:47:20 - atlassian-test - OK - stderr:
+*******************************************************************************
+Nov 18 2015 16:41:41 - 172.16.100.84 - OK - cmd:rpm -qa|grep libselinux-python
+Nov 18 2015 16:41:41 - 172.16.100.84 - OK - start:2015-11-19 00:19:35.692818
+Nov 18 2015 16:41:41 - 172.16.100.84 - OK - end:2015-11-19 00:19:35.852469
+Nov 18 2015 16:41:41 - 172.16.100.84 - OK - delta:0:00:00.159651
+Nov 18 2015 16:41:41 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:43:22 - 172.16.100.84 - OK - msg:
+Nov 18 2015 16:43:54 - 172.16.100.84 - OK - msg:
+Nov 18 2015 16:43:57 - 172.16.100.84 - OK - cmd:[u'/bin/tar', u'xvf', u'Python-2.7.9.tgz']
+Nov 18 2015 16:43:57 - 172.16.100.84 - OK - start:2015-11-19 00:21:51.073003
+Nov 18 2015 16:43:57 - 172.16.100.84 - OK - end:2015-11-19 00:21:51.605747
+Nov 18 2015 16:43:57 - 172.16.100.84 - OK - delta:0:00:00.532744
+Nov 18 2015 16:43:57 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:44:07 - 172.16.100.84 - OK - cmd:[u'./configure']
+Nov 18 2015 16:44:07 - 172.16.100.84 - OK - start:2015-11-19 00:21:51.868413
+Nov 18 2015 16:44:07 - 172.16.100.84 - OK - end:2015-11-19 00:22:01.603985
+Nov 18 2015 16:44:07 - 172.16.100.84 - OK - delta:0:00:09.735572
+Nov 18 2015 16:44:07 - 172.16.100.84 - OK - stderr:configure: WARNING:
+
+  By default, distutils will build C++ extension modules with "g++".
+  If this is not intended, then set CXX on the configure command line.
+  
+Nov 18 2015 16:45:09 - 172.16.100.84 - OK - cmd:[u'make', u'-j4']
+Nov 18 2015 16:45:09 - 172.16.100.84 - OK - start:2015-11-19 00:22:01.862061
+Nov 18 2015 16:45:09 - 172.16.100.84 - OK - end:2015-11-19 00:23:04.517129
+Nov 18 2015 16:45:09 - 172.16.100.84 - OK - delta:0:01:02.655068
+Nov 18 2015 16:45:09 - 172.16.100.84 - OK - stderr:Objects/fileobject.c: In function ‘file_write’:
+Objects/fileobject.c:1807: warning: ‘err’ may be used uninitialized in this function
+libpython2.7.a(posixmodule.o): In function `posix_tmpnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7575: warning: the use of `tmpnam_r' is dangerous, better use `mkstemp'
+libpython2.7.a(posixmodule.o): In function `posix_tempnam':
+/tmp/Python-2.7.9/./Modules/posixmodule.c:7522: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+/tmp/Python-2.7.9/Modules/cPickle.c: In function ‘read_cStringIO’:
+/tmp/Python-2.7.9/Modules/cPickle.c:617: warning: ‘start’ may be used uninitialized in this function
+In file included from /tmp/Python-2.7.9/./Modules/expat/expat_config.h:8,
+                 from /tmp/Python-2.7.9/Modules/expat/xmlparse.c:22:
+./pyconfig.h:1182:1: warning: "_POSIX_C_SOURCE" redefined
+In file included from /usr/include/string.h:27,
+                 from /tmp/Python-2.7.9/Modules/expat/xmlparse.c:6:
+/usr/include/features.h:213:1: warning: this is the location of the previous definition
+Nov 18 2015 16:45:16 - 172.16.100.84 - OK - cmd:[u'make', u'install']
+Nov 18 2015 16:45:16 - 172.16.100.84 - OK - start:2015-11-19 00:23:04.778368
+Nov 18 2015 16:45:16 - 172.16.100.84 - OK - end:2015-11-19 00:23:11.183371
+Nov 18 2015 16:45:16 - 172.16.100.84 - OK - delta:0:00:06.405003
+Nov 18 2015 16:45:16 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - cmd:[u'/bin/tar', u'xvf', u'setuptools-0.6c11.tar.gz']
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - start:2015-11-19 00:23:11.863757
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - end:2015-11-19 00:23:11.874124
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - delta:0:00:00.010367
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - start:2015-11-19 00:23:12.118143
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - end:2015-11-19 00:23:12.340158
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - delta:0:00:00.222015
+Nov 18 2015 16:45:17 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:45:18 - 172.16.100.84 - OK - cmd:[u'/bin/tar', u'xvf', u'/tmp/pip-1.4.1.tar.gz']
+Nov 18 2015 16:45:18 - 172.16.100.84 - OK - start:2015-11-19 00:23:12.988502
+Nov 18 2015 16:45:18 - 172.16.100.84 - OK - end:2015-11-19 00:23:13.004546
+Nov 18 2015 16:45:18 - 172.16.100.84 - OK - delta:0:00:00.016044
+Nov 18 2015 16:45:18 - 172.16.100.84 - OK - stderr:
+Nov 18 2015 16:45:19 - 172.16.100.84 - OK - cmd:[u'/usr/local/bin/python2.7', u'setup.py', u'install']
+Nov 18 2015 16:45:19 - 172.16.100.84 - OK - start:2015-11-19 00:23:13.254472
+Nov 18 2015 16:45:19 - 172.16.100.84 - OK - end:2015-11-19 00:23:13.835991
+Nov 18 2015 16:45:19 - 172.16.100.84 - OK - delta:0:00:00.581519
+Nov 18 2015 16:45:19 - 172.16.100.84 - OK - stderr:warning: no files found matching '*.html' under directory 'docs'
+warning: no previously-included files matching '*.rst' found under directory 'docs/_build'
+no previously-included directories found matching 'docs/_build/_sources'
+*******************************************************************************
+Dec 09 2015 16:25:37 - 191-246 - OK - msg:line added
+*******************************************************************************
+Dec 09 2015 16:34:56 - 174-186 - OK - msg:line added
+Dec 09 2015 16:35:05 - 174-185 - OK - msg:line added
+*******************************************************************************
+Dec 09 2015 16:42:22 - 77-42 - OK - msg:line added
+*******************************************************************************
+*******************************************************************************
+Dec 16 2015 17:00:03 - 20-98-10916 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 16 2015 17:00:03 - 20-98-10916 - OK - start:2015-12-16 17:01:05.915722
+Dec 16 2015 17:00:03 - 20-98-10916 - OK - end:2015-12-16 17:01:07.226140
+Dec 16 2015 17:00:03 - 20-98-10916 - OK - delta:0:00:01.310418
+Dec 16 2015 17:00:03 - 20-98-10916 - OK - stderr:
+Dec 16 2015 17:00:05 - 20-98-11016 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 16 2015 17:00:05 - 20-98-11016 - OK - start:2015-12-16 17:01:08.120954
+Dec 16 2015 17:00:05 - 20-98-11016 - OK - end:2015-12-16 17:01:09.556513
+Dec 16 2015 17:00:05 - 20-98-11016 - OK - delta:0:00:01.435559
+Dec 16 2015 17:00:05 - 20-98-11016 - OK - stderr:
+Dec 16 2015 17:00:09 - 20-98-10916 - OK - msg:line added
+Dec 16 2015 17:00:11 - 20-98-11016 - OK - msg:
+*******************************************************************************
+Dec 18 2015 11:39:24 - 30-99 - OK - msg:
+Dec 18 2015 11:39:24 - 30-102 - OK - msg:line added
+Dec 18 2015 11:39:24 - 191-246 - OK - msg:line added
+Dec 18 2015 11:39:24 - 191-238 - OK - msg:line added
+*******************************************************************************
+Dec 18 2015 11:39:29 - 30-102 - OK - msg:
+Dec 18 2015 11:39:29 - 30-99 - OK - msg:
+Dec 18 2015 11:39:29 - 191-238 - OK - msg:
+Dec 18 2015 11:39:29 - 191-246 - OK - msg:
+*******************************************************************************
+Dec 18 2015 11:39:34 - 30-102 - OK - msg:
+Dec 18 2015 11:39:34 - 30-99 - OK - msg:
+Dec 18 2015 11:39:34 - 191-238 - OK - msg:
+Dec 18 2015 11:39:34 - 191-246 - OK - msg:
+*******************************************************************************
+Dec 24 2015 15:38:58 - 21-105 - OK - msg:line added
+Dec 24 2015 15:39:12 - 191-244 - OK - msg:line added
+*******************************************************************************
+Dec 24 2015 15:52:50 - 174-186 - OK - msg:
+*******************************************************************************
+Dec 25 2015 11:23:30 - 30-88 - OK - msg:line added
+*******************************************************************************
+Dec 25 2015 11:24:01 - 30-88 - OK - msg:line added
+*******************************************************************************
+Dec 25 2015 14:23:12 - 77-43 - OK - msg:line added
+Dec 25 2015 14:23:12 - 77-42 - OK - msg:line added
+*******************************************************************************
+Dec 25 2015 14:23:26 - 77-43 - OK - msg:
+Dec 25 2015 14:23:26 - 77-42 - OK - msg:
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+Dec 25 2015 18:11:19 - 30-99 - OK - msg:line added
+Dec 25 2015 18:11:21 - 30-100 - OK - msg:line added
+*******************************************************************************
+Dec 25 2015 18:11:26 - 30-100 - OK - msg:
+Dec 25 2015 18:11:26 - 30-99 - OK - msg:
+*******************************************************************************
+*******************************************************************************
+Dec 25 2015 18:12:31 - 30-99 - OK - stderr:useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+Creating mailbox file: File exists
+
+Dec 25 2015 18:12:31 - 30-100 - OK - stderr:useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+Creating mailbox file: File exists
+
+Dec 25 2015 18:12:32 - 30-100 - OK - msg:
+Dec 25 2015 18:12:33 - 30-99 - OK - msg:
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+Dec 25 2015 18:21:18 - 20-98-11016 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 25 2015 18:21:18 - 20-98-11016 - OK - start:2015-12-25 18:22:26.032235
+Dec 25 2015 18:21:18 - 20-98-11016 - OK - end:2015-12-25 18:22:27.418297
+Dec 25 2015 18:21:18 - 20-98-11016 - OK - delta:0:00:01.386062
+Dec 25 2015 18:21:18 - 20-98-11016 - OK - stderr:
+Dec 25 2015 18:21:19 - 20-98-10916 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 25 2015 18:21:19 - 20-98-10916 - OK - start:2015-12-25 18:22:26.589270
+Dec 25 2015 18:21:19 - 20-98-10916 - OK - end:2015-12-25 18:22:27.808413
+Dec 25 2015 18:21:19 - 20-98-10916 - OK - delta:0:00:01.219143
+Dec 25 2015 18:21:19 - 20-98-10916 - OK - stderr:
+Dec 25 2015 18:21:22 - 20-98-11016 - OK - msg:line added
+Dec 25 2015 18:21:23 - 20-98-10916 - OK - msg:line added
+*******************************************************************************
+Dec 25 2015 18:21:57 - 20-98-10916 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 25 2015 18:21:57 - 20-98-10916 - OK - start:2015-12-25 18:23:05.294322
+Dec 25 2015 18:21:57 - 20-98-10916 - OK - end:2015-12-25 18:23:05.827188
+Dec 25 2015 18:21:57 - 20-98-10916 - OK - delta:0:00:00.532866
+Dec 25 2015 18:21:57 - 20-98-10916 - OK - stderr:
+Dec 25 2015 18:21:57 - 20-98-11016 - OK - cmd:rpm -qa|grep libselinux-python
+Dec 25 2015 18:21:57 - 20-98-11016 - OK - start:2015-12-25 18:23:05.539596
+Dec 25 2015 18:21:57 - 20-98-11016 - OK - end:2015-12-25 18:23:06.229301
+Dec 25 2015 18:21:57 - 20-98-11016 - OK - delta:0:00:00.689705
+Dec 25 2015 18:21:57 - 20-98-11016 - OK - stderr:
+Dec 25 2015 18:22:00 - 20-98-10916 - OK - msg:
+Dec 25 2015 18:22:00 - 20-98-11016 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:52:41 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:53:22 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:54:04 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:54:46 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:55:28 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:56:09 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:56:51 - 191-244 - OK - msg:
+*******************************************************************************
+Dec 28 2015 17:56:56 - 191-246 - OK - msg:line added
+*******************************************************************************
+Dec 28 2015 18:07:09 - 191-253_218 - OK - msg:line added
+*******************************************************************************
+*******************************************************************************
+Dec 29 2015 13:15:54 - 30-101 - OK - msg:line added
+Dec 29 2015 13:15:54 - 30-102 - OK - msg:line added
+*******************************************************************************
+*******************************************************************************
+Dec 31 2015 14:46:06 - 30-100 - FAILED - msg:userdel: user wanghaidong is currently logged in
+
+*******************************************************************************
+Jan 08 2016 10:35:48 - 191-246 - OK - msg:line added
+*******************************************************************************
+Jan 08 2016 10:37:07 - 191-238 - OK - msg:
+Jan 08 2016 10:37:07 - 191-237 - OK - msg:line added
+*******************************************************************************
+Jan 08 2016 10:45:58 - 30-99 - OK - msg:
+*******************************************************************************
+Jan 08 2016 10:49:31 - 30-102 - OK - msg:line added
+*******************************************************************************
+Jan 08 2016 10:55:28 - 30-89 - FAILED - msg:Aborting, target uses selinux but python bindings (libselinux-python) aren't installed!
+*******************************************************************************
+Jan 08 2016 10:56:27 - 49-72 - OK - msg:line added
+*******************************************************************************
+Jan 08 2016 10:59:28 - 30-89 - FAILED - msg:Aborting, target uses selinux but python bindings (libselinux-python) aren't installed!
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+Jan 08 2016 11:50:47 - 30-89 - OK - stderr:Creating mailbox file: File exists
+
+Jan 08 2016 11:50:48 - 30-89 - FAILED - msg:Aborting, target uses selinux but python bindings (libselinux-python) aren't installed!
+*******************************************************************************
+Jan 11 2016 11:04:12 - 174-186 - OK - msg:
+*******************************************************************************
+Jan 11 2016 11:50:01 - 173.110 - FAILED - cmd:rpm -qa|grep libselinux-python
+Jan 11 2016 11:50:01 - 173.110 - FAILED - start:2016-01-11 11:51:18.725583
+Jan 11 2016 11:50:01 - 173.110 - FAILED - end:2016-01-11 11:51:19.659206
+Jan 11 2016 11:50:01 - 173.110 - FAILED - delta:0:00:00.933623
+Jan 11 2016 11:50:01 - 173.110 - FAILED - stderr:
+Jan 11 2016 11:50:21 - 173.110 - OK - stderr:
+Jan 11 2016 11:50:36 - 173.110 - OK - msg:
+Jan 11 2016 11:50:41 - 173.110 - OK - cmd:[u'/bin/tar', u'xvf', u'tengine-2.0.3.tar.gz']
+Jan 11 2016 11:50:41 - 173.110 - OK - start:2016-01-11 11:51:59.406195
+Jan 11 2016 11:50:41 - 173.110 - OK - end:2016-01-11 11:51:59.527168
+Jan 11 2016 11:50:41 - 173.110 - OK - delta:0:00:00.120973
+Jan 11 2016 11:50:41 - 173.110 - OK - stderr:
+Jan 11 2016 11:50:46 - 173.110 - OK - cmd:[u'./configure', u'--user=www', u'--group=www', u'--prefix=/usr/local/nginx', u'--with-http_gzip_static_module', u'--with-http_stub_status_module', u'--with-http_ssl_module', u'--with-pcre', u'--with-file-aio']
+Jan 11 2016 11:50:46 - 173.110 - OK - start:2016-01-11 11:52:00.613667
+Jan 11 2016 11:50:46 - 173.110 - OK - end:2016-01-11 11:52:04.771669
+Jan 11 2016 11:50:46 - 173.110 - OK - delta:0:00:04.158002
+Jan 11 2016 11:50:46 - 173.110 - OK - stderr:
+Jan 11 2016 11:51:16 - 173.110 - OK - cmd:[u'make', u'-j4']
+Jan 11 2016 11:51:16 - 173.110 - OK - start:2016-01-11 11:52:05.816315
+Jan 11 2016 11:51:16 - 173.110 - OK - end:2016-01-11 11:52:34.908006
+Jan 11 2016 11:51:16 - 173.110 - OK - delta:0:00:29.091691
+Jan 11 2016 11:51:16 - 173.110 - OK - stderr:
+Jan 11 2016 11:51:17 - 173.110 - OK - cmd:[u'make', u'install']
+Jan 11 2016 11:51:17 - 173.110 - OK - start:2016-01-11 11:52:35.933645
+Jan 11 2016 11:51:17 - 173.110 - OK - end:2016-01-11 11:52:36.143368
+Jan 11 2016 11:51:17 - 173.110 - OK - delta:0:00:00.209723
+Jan 11 2016 11:51:17 - 173.110 - OK - stderr:
+Jan 11 2016 11:51:21 - 173.110 - OK - cmd:[u'/sbin/chkconfig', u'--add', u'nginx']
+Jan 11 2016 11:51:21 - 173.110 - OK - start:2016-01-11 11:52:40.248441
+Jan 11 2016 11:51:21 - 173.110 - OK - end:2016-01-11 11:52:40.254946
+Jan 11 2016 11:51:21 - 173.110 - OK - delta:0:00:00.006505
+Jan 11 2016 11:51:21 - 173.110 - OK - stderr:
+Jan 11 2016 11:51:22 - 173.110 - OK - cmd:[u'/sbin/chkconfig', u'--level', u'345', u'nginx', u'on']
+Jan 11 2016 11:51:22 - 173.110 - OK - start:2016-01-11 11:52:41.265604
+Jan 11 2016 11:51:22 - 173.110 - OK - end:2016-01-11 11:52:41.271879
+Jan 11 2016 11:51:22 - 173.110 - OK - delta:0:00:00.006275
+Jan 11 2016 11:51:22 - 173.110 - OK - stderr:

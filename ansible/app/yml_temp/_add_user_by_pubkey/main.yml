@@ -1,0 +1,28 @@
+---
+- hosts: '{{ host }}'
+  remote_user: '{{ user }}'
+  tasks:
+    - name: return failed if libselinux-python is not exists
+      shell: rpm -qa|grep libselinux-python
+      register: result
+      ignore_errors: true
+
+    - name: install libselinux-python when result is failed
+      raw: yum -y install libselinux-python
+      when: result|failed
+
+    - name: add user 
+      # Linux passwd use SHA512
+      # from passlib.hash import sha512_crypt
+      # sha512_crypt.encrypt('passwdstr')
+      # Options: name password uid group shell generate_ssh_key ssh_key_type ssh_key_comment state remove
+      user: name={{ username }}
+
+    - name: add user to /etc/sudoers
+      # Options: dest line regexp owner group mode backup
+      lineinfile: dest=/etc/sudoers line="{{ username }} ALL=(ALL) NOPASSWD:ALL"
+
+    - name: add ssh key
+    # Option: user key 
+      authorized_key: user={{ username }} key="{{ key }}"
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Forms</a>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Form Elements</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+				<form role="form" method="post" action={{ url_for('hosts.add') }}>
+					{{ form.hidden_tag() if form.hidden_tag }}
+					{% for f in form if f.type != 'CSRFTokenField' %}
+						{% if f.errors %}
+						<div class="input-group has-error col-md-4">
+							{{ f.label(class_="control-label", for="inputError1") }}
+							{{ f(class_="form-control", id="inputError1", placeholder="Enter " + f.label.text) }}
+							{% if f.errors %}
+								{% for e in f.errors %}
+									<div class="alert alert-danger">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										<strong>Oh snap!</strong> {{ e }}
+									</div>
+								{% endfor %}
+							{% endif %}
+						</div>
+						{% else %}
+						<div class="input-group col-md-4">
+							{{ f.label(class_="control-label") }}
+							{{ f(class_="form-control", placeholder="Enter " + f.label.text) }}
+						</div>
+						{% endif %}
+					{% endfor %}
+					</br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+
+{% endblock %}

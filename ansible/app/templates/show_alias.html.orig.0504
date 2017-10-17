@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Update Status</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+						<div class="col-md-4"><h6>{{ alias_info.last_update|datetime }}</h6></div>
+						{% if alias_info.failed %}
+						<div class="col-md-4"><h6>{{ alias_info.failed }}</h6></div>
+						<div class="col-md-4"><h6>{{ alias_info.msg }}</h6></div>
+						{% else %}
+						<div class="col-md-4"><h6>{{ alias_info.failed }}</h6></div>
+						<div class="col-md-4"><h6>{{ alias_info.msg }}</h6></div>
+						{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Server Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>system_vendor</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.system_vendor }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>product_name</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.product_name }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>product_serial</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.product_serial }}</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>System Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>distribution</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.distribution }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>distribution_version</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.distribution_version }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>architecture</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.architecture }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>kernel</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.kernel }}</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Cpu Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>processor_count</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.processor_count }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>processor_cores</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.processor_cores }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>processor_vcpus</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.processor_vcpus }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>processor_threads_per_core</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.processor_threads_per_core }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>processor</h6></div>
+						<div class="col-md-6">
+						{% if alias_info.processor %}
+							{% for i in alias_info.processor|eval %}
+							<li><h6>{{ i }}</h6></li>
+							{% endfor %}
+						{% else %}
+							<h6>{{ alias_info.processor }}</h6>
+						{% endif %}
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Swap Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>swaptotal_mb</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.swaptotal_mb }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>swapfree_mb</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.swapfree_mb }}</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Mem Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>memtotal_mb</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.memtotal_mb }}</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>memfree_mb</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.memfree_mb }}</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-8">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Disk Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-3"><h6>device name</h6></div>
+                        <div class="col-md-3"><h6>model</h6></div>
+                        <div class="col-md-3"><h6>size</h6></div>
+                        <div class="col-md-3"><h6>partitions</h6></div>
+                    </div>
+					{% if alias_info.devices %}
+						{% for device in alias_info.devices|eval %}
+						<div class="row">
+							<div class="col-md-3"><h6>{{ device }}</h6></div>
+						</div>
+						{% endfor %}
+					{% endif %}
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Mounts Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-2"><h6>device</h6></div>
+                        <div class="col-md-2"><h6>mount</h6></div>
+                        <div class="col-md-2"><h6>fstype</h6></div>
+                        <div class="col-md-2"><h6>size_total</h6></div>
+                        <div class="col-md-2"><h6>size_available</h6></div>
+                        <div class="col-md-2"><h6>used_percent</h6></div>
+                    </div>
+					{% if alias_info.mounts %}
+						{% for i in alias_info.mounts %}
+						<div class="row">
+							<div class="col-md-2"><h6>{{ i }}</h6></div>
+						</div>
+						{% endfor %}
+					{% endif %}
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-6">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Ip info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-4"><h6>default_ipv4</h6></div>
+						<div class="col-md-4"><h6>all_ipv4_addresses</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+						{% if alias_info.default_ipv4 %}
+							<li>interface: {{ alias_info.default_ipv4.interface }}</li>
+							<li>address: {{ alias_info.default_ipv4.address }}</li>
+							<li>netmask: {{ alias_info.default_ipv4.netmask }}</li>
+							<li>gateway: {{ alias_info.default_ipv4.gateway }}</li>
+						{% else %}
+							{{ alias_info.default_ipv4 }}
+						{% endif %}
+						</div>
+						<div class="col-md-6">
+						{% if alias_info.all_ipv4_addresses %}
+							{% for i in alias_info.all_ipv4_addresses %}
+								<li>{{ i }}</li>
+							{% endfor %}
+						{% else %}
+							{{ alias_info.all_ipv4_addresses }}
+						{% endif %}
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!--/span-->
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2>Software Info</h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-6"><h6>selinux</h6></div>
+						{% if alias_info.selinux %}
+						<div class="col-md-6">status: {{ alias_info.selinux.status }}</div>
+						{% else %}
+						<div class="col-md-6">{{ alias_info.selinux }}</div>
+						{% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><h6>python</h6></div>
+						<div class="col-md-6"><h6>{{ alias_info.python_version}}</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+<form action="" method=post>
+	<button type="submit">Update</button>
+</form>
+
+{% endblock %}
+
+{% block settings %}
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
