@@ -32,7 +32,7 @@ def send2amqp(yml_temp_name, args):
 
     body = (started, yml_temp_name, args)
     msg = amqp.Message(pickle.dumps(body))
-    msg.properties['delivery_mode'] = 2
+    msg.properties['delivery_mode'] = 2    #持久化消息
     g.amqp_chan.basic_publish(msg, exchange="sorting_room", routing_key="json")
 
 

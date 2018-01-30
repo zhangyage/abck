@@ -92,6 +92,7 @@ def uri_match(re_str, uri):
 def permision(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
+        #if not current_user.is_authenticated():
         if not current_user.is_authenticated():
             return current_app.login_manager.unauthorized()
         results = g.mysql_db.get("select group_concat(path) as re_strs from \

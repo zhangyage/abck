@@ -56,7 +56,7 @@ def recv_callback(msg):
                              password=app.config['DB_PASS'],
                              database=app.config['DB_NAME'],
                              charset='utf8'
-                             )
+                             )  
 
     started, yml_temp_name, args = pickle.loads(msg.body)
     logger.info("started: %s" % started)
